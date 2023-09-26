@@ -32,14 +32,14 @@ class ButtonNavBar extends GetView<HomeControllerImp> {
             buttonItems(image: ImageConst.imageVectorCart),
             buttonItems(image: ImageConst.imageVectorPerson),
           ],
-          currentIndex: controller.currentPage.value < 3
+          currentIndex: controller.currentPage.value < 4
               ? controller.currentPage.value
               : 2,
           onTap: (int index) {
-            controller.currentPage.value < 3
-                ? controller.currentPage(index)
+            controller.currentPage.value < 4
+                ? controller.changeCurrentPage(index)
                 : index != 2
-                    ? controller.currentPage(index)
+                    ? controller.changeCurrentPage(index)
                     : null;
           },
         ),

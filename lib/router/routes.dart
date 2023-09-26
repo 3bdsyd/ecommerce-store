@@ -35,11 +35,12 @@ class Routes {
       // ],
     ),
     GetPage(
-        name: ScreenNames.signUpScreen,
-        page: () => const SignUp(),
-        bindings: [
-          SignUpBinding(),
-        ]),
+      name: ScreenNames.signUpScreen,
+      page: () => const SignUp(),
+      bindings: [
+        SignUpBinding(),
+      ],
+    ),
     GetPage(
       name: ScreenNames.signInScreen,
       page: () => const SignIn(),
@@ -51,19 +52,34 @@ class Routes {
     GetPage(
       name: ScreenNames.passwordRecovery,
       page: () => const PasswordRecovery(),
+      bindings: [
+        AuthBinding(),
+        SignInBinding(),
+      ],
     ),
     GetPage(
       name: ScreenNames.otpAuth,
       page: () => const OTPAuth(),
+      bindings: [
+        AuthBinding(),
+        SignInBinding(),
+      ],
     ),
     GetPage(
       name: ScreenNames.informationAuth,
       page: () => const InformationAuth(),
-      binding: AuthBinding(),
+      bindings: [
+        AuthBinding(),
+        SignInBinding(),
+      ],
     ),
     GetPage(
       name: ScreenNames.configure,
       page: () => const Configure(),
+      bindings: [
+        AuthBinding(),
+        SignInBinding(),
+      ],
     ),
     GetPage(
       name: ScreenNames.home,

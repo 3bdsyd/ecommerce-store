@@ -59,7 +59,7 @@ class SignInControllerImp extends SignInController {
       if (StatusRequest.success == statusRequest) {
         if (response['code'] == 0) {
           data.addAll(response['data']);
-          Get.offNamed(ScreenNames.signInScreen);
+          Get.offNamed(ScreenNames.otpAuth);
           // print(data['Token']);
           myServicesController.getBox.write('Token', data['Token']);
           // print(myServicesController.getBox.read('Token'));

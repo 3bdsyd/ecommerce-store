@@ -13,41 +13,44 @@ class ProductsList extends StatelessWidget {
   Widget build(BuildContext context) {
     double sizeWidth = Platform.getSizeWidth(context);
     return Expanded(
-      child: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: numberOfCardsInLine(sizeWidth),
-          childAspectRatio: sizeOfCardsInLine(sizeWidth),
-          mainAxisSpacing: 5.h,
-        ),
-        itemCount: 20,
-        physics: const BouncingScrollPhysics(
-          parent: AlwaysScrollableScrollPhysics(),
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            color: ColorConst.nineColor,
-            elevation: .2,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 10.w,
-                vertical: 10.h,
+      child: ScrollConfiguration(
+        behavior: MaterialScrollBehavior().copyWith(overscroll: false),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: numberOfCardsInLine(sizeWidth),
+            childAspectRatio: sizeOfCardsInLine(sizeWidth),
+            mainAxisSpacing: 5.h,
+          ),
+          itemCount: 20,
+          // physics: const BouncingScrollPhysics(
+          //   parent: AlwaysScrollableScrollPhysics(),
+          // ),
+          itemBuilder: (BuildContext context, int index) {
+            return Card(
+              color: ColorConst.nineColor,
+              elevation: .2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Builder(builder: (context) {
-                    return const LeftCartOrder();
-                  }),
-                  const ImageNameCartOrder()
-                ],
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10.w,
+                  vertical: 10.h,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Builder(builder: (context) {
+                      return const LeftCartOrder();
+                    }),
+                    const ImageNameCartOrder()
+                  ],
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       ),
     );
   }
