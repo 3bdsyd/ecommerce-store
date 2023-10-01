@@ -1,10 +1,4 @@
-import 'package:ecommerce_store/controller/signup_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 // ignore: must_be_immutable
 class FormFieldWidget extends StatelessWidget {
@@ -27,7 +21,6 @@ class FormFieldWidget extends StatelessWidget {
   late bool? obscureText;
   final Function(String value) validator;
   final TextEditingController controller;
-  final SignUpControllerImp signUpController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -90,7 +83,7 @@ class FormFieldWidget extends StatelessWidget {
             ),
             suffixIcon: imageSuffix != null
                 ? GestureDetector(
-                    onTap: signUpController.changeObscureText,
+                    // onTap: signUpController.changeObscureText,
                     child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: SvgPicture.asset(

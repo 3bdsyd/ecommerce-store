@@ -1,12 +1,4 @@
-import 'package:ecommerce_store/controller/on_boarding_controller.dart';
-import 'package:ecommerce_store/core/constant/image_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../data/datasource/static/static.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 class LogoTitle extends GetView<OnBoardingControllerImp> {
   const LogoTitle({super.key});
@@ -24,14 +16,14 @@ class LogoTitle extends GetView<OnBoardingControllerImp> {
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color: ColorConst.thirdColor.withOpacity(.1),
+                color: ColorConst.primaryColor.withOpacity(.2),
                 blurRadius: 20,
                 spreadRadius: -20,
               ),
             ],
           ),
           child: Image.asset(
-            ImageConst.myLogo,
+            onBoardingList[index].logoImage,
           ),
         ),
         SizedBox(
@@ -39,7 +31,8 @@ class LogoTitle extends GetView<OnBoardingControllerImp> {
         ),
         Text(
           onBoardingList[index].titleText,
-          style: context.textTheme.titleSmall,
+          style: context.textTheme.titleSmall!
+              .copyWith(color: ColorConst.darkColor),
         ),
         SizedBox(
           height: 10.h,

@@ -32,7 +32,7 @@ class TitleBack extends GetView<HomeControllerImp> {
                   : controller.changeCurrentPageInformation(0);
             },
             child: SvgPicture.asset(
-              ImageConst.fromFieldImageButtonBack,
+              ImageConst.buttonBack,
               height: 25.h,
               width: 25.w,
             ),

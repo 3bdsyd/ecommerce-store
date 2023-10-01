@@ -1,7 +1,7 @@
 import 'package:ecommerce_store/core/constant/package_const.dart';
 
-class ButtonSignUpFacebook extends StatelessWidget {
-  const ButtonSignUpFacebook({
+class ButtonAuthGoogle extends StatelessWidget {
+  const ButtonAuthGoogle({
     super.key,
     required this.onPressed,
   });
@@ -10,10 +10,6 @@ class ButtonSignUpFacebook extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Divider(),
-        SizedBox(
-          height: 10.h,
-        ),
         SizedBox(
           height: 40.h,
           width: double.infinity,
@@ -22,7 +18,7 @@ class ButtonSignUpFacebook extends StatelessWidget {
             child: ElevatedButton(
               onPressed: onPressed,
               style: ElevatedButton.styleFrom(
-                backgroundColor: ColorConst.blueColor,
+                backgroundColor: Colors.grey[300],
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -31,14 +27,14 @@ class ButtonSignUpFacebook extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   SvgPicture.asset(
-                    ImageConst.fromFieldImageFacebook,
+                    ImageConst.googleLogo,
                     width: 28.w,
                     fit: BoxFit.scaleDown,
                   ),
                   Text(
-                    'Connect with Facebook',
+                    'Connect with Google',
                     style: context.textTheme.labelLarge!.copyWith(
-                      color: ColorConst.whiteColor,
+                      color: ColorConst.darkColor,
                     ),
                   ),
                   Container(),

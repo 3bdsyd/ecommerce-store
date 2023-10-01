@@ -24,58 +24,8 @@ class ButtonSignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // Row(
-        //   children: [
-        //     GetBuilder<SignUpControllerImp>(
-        //       builder: (_) => GestureDetector(
-        //         onTap: () => controller.changeApprovalStatusStandards(),
-        //         child: controller.approvalOfStandards
-        //             ? SvgPicture.asset(
-        //                 ImageConst.fromFieldImageCheckBox,
-        //                 width: 15,
-        //                 height: 18,
-        //                 fit: BoxFit.cover,
-        //               )
-        //             : Container(
-        //                 width: 17.9,
-        //                 height: 17,
-        //                 decoration: BoxDecoration(
-        //                   border: Border.all(color: Colors.grey, width: 1.5),
-        //                   borderRadius: BorderRadius.circular(3),
-        //                 ),
-        //               ),
-        //       ),
-        //     ),
-        //     SizedBox(
-        //       width: 20.w,
-        //     ),
-        //     Expanded(
-        //       child: Text(
-        //         signUp
-        //             ? 'By creating an account, you agree to our Term & Conditions'
-        //             : 'Remember me',
-        //         style: context.textTheme.labelMedium,
-        //       ),
-        //     ),
-        //     !signUp
-        //         ? Align(
-        //             alignment: Alignment.centerLeft,
-        //             child: Text(
-        //               'Forgot password?',
-        //               textAlign: TextAlign.center,
-        //               style: context.textTheme.labelSmall!.copyWith(
-        //                 decoration: TextDecoration.underline,
-        //                 fontSize: 12,
-        //               ),
-        //             ),
-        //           )
-        //         : Container(
-        //             width: 0,
-        //           ),
-        //   ],
-        // ),
         SizedBox(
-          height: signUp ? 25.h : 100.h,
+          height: 25.h,
         ),
         SizedBox(
           height: 40.h,
@@ -98,7 +48,9 @@ class ButtonSignUp extends StatelessWidget {
                 Container(),
                 Text(
                   signUp ? 'Sign Up' : 'Sign In',
-                  style: context.textTheme.labelLarge,
+                  style: context.textTheme.labelLarge!.copyWith(
+                    color: ColorConst.whiteColor,
+                  ),
                 ),
                 SvgPicture.asset(
                   ImageConst.fromFieldImageSignUp,
@@ -121,7 +73,7 @@ class ButtonSignUp extends StatelessWidget {
                     style: context.textTheme.labelMedium,
                   ),
                   GestureDetector(
-                    onTap: () => Get.toNamed(
+                    onTap: () => Get.offNamed(
                       ScreenNames.signInScreen,
                     ),
                     child: Text(

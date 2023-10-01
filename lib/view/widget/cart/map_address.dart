@@ -26,7 +26,7 @@ class MapAddress extends GetView<HomeControllerImp>{
                 controller.changeStateMap(false);
               },
               child: SvgPicture.asset(
-                ImageConst.fromFieldImageButtonBack,
+                ImageConst.buttonBack,
                 width: 25.w,
                 height: 25.h,
                 fit: BoxFit.scaleDown,

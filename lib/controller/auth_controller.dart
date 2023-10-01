@@ -1,5 +1,5 @@
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 abstract class AuthController extends GetxController {
   showNote();
@@ -8,11 +8,13 @@ abstract class AuthController extends GetxController {
 class AuthControllerImp extends AuthController {
   bool show = true;
   GlobalKey<FormState> formLogin = GlobalKey();
-  final TextEditingController loginController= TextEditingController();
+  final TextEditingController loginController = TextEditingController();
   @override
   void showNote() {
     show = false;
     update();
   }
+
+  
 
 }

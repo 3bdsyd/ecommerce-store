@@ -1,11 +1,7 @@
-import 'package:flutter/material.dart';
-
-import 'core/services/my_services.dart';
-import 'my_app.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialServices();
   runApp(const MyApp());
 }
-

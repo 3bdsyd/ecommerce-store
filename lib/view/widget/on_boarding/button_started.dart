@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../controller/on_boarding_controller.dart';
+import '../../../controller/onboarding_controller.dart';
 import '../../../core/constant/color_const.dart';
 import '../../../core/constant/image_const.dart';
 import '../../../data/datasource/static/static.dart';

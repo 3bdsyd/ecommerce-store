@@ -4,6 +4,6 @@ import 'package:get/get.dart';
 class CrudBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut(() => Crud());
+    Get.put(Crud());
   }
 }

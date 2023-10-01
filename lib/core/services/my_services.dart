@@ -1,20 +1,31 @@
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 class MyServices extends GetxService {
   late GetStorage getBox;
 
   Future<MyServices> init() async {
+//----------------------------------------------------------------
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
+//----------------------------------------------------------------
+
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    WidgetsFlutterBinding.ensureInitialized();
+    await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
+
+//----------------------------------------------------------------
+
     await GetStorage.init();
     getBox = GetStorage();
-    getBox.remove('rankPage');
+    // getBox.remove('rankPage');
     // currentPage = GetStorage().read('rankPage');
     return this;
   }
-
-  // void write(String key, dynamic value) {
-  //   GetStorage().write(key, value);
-  // }
 }
 
 initialServices() async {

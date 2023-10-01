@@ -1,12 +1,4 @@
-import 'package:ecommerce_store/controller/on_boarding_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/get_utils/get_utils.dart';
-
-import '../../../core/class/platform.dart';
-import '../../../core/constant/color_const.dart';
-import '../../../data/datasource/static/static.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 class SliderBodyText extends GetView<OnBoardingControllerImp> {
   const SliderBodyText({super.key});
@@ -14,7 +6,7 @@ class SliderBodyText extends GetView<OnBoardingControllerImp> {
   @override
   Widget build(BuildContext context) {
     final int index = controller.currentPage;
-    final double sizeWidth = Platform.getSizeWidth(context);
+    final double sizeWidth = Get.width;
     return Column(
       children: [
         sizeWidth < 500
@@ -44,6 +36,8 @@ class SliderBodyText extends GetView<OnBoardingControllerImp> {
                           child: Image.asset(
                             onBoardingList[index].bodyImageTow,
                             width: 200.w,
+                            height: 250.h,
+                            fit: BoxFit.fill,
                           ),
                         ),
                       ),
@@ -70,7 +64,8 @@ class SliderBodyText extends GetView<OnBoardingControllerImp> {
                           child: Image.asset(
                             onBoardingList[index].bodyImageOne,
                             width: 200.w,
-                            // height: 250.h,
+                            fit: BoxFit.fill,
+                            height: 250.h,
                           ),
                         ),
                       ),
@@ -87,7 +82,8 @@ class SliderBodyText extends GetView<OnBoardingControllerImp> {
         sizeWidth < 500 ? Container(width: 0) : const Spacer(),
         Text(
           onBoardingList[index].bodyText,
-          style: context.textTheme.bodyLarge,
+          style: context.textTheme.bodyLarge!
+              .copyWith(color: ColorConst.darkColor),
           textAlign: TextAlign.center,
         ),
       ],

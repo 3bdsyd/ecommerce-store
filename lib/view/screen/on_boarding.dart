@@ -1,13 +1,4 @@
-import 'package:ecommerce_store/view/widget/on_boarding/button_started.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-
-import '../../controller/on_boarding_controller.dart';
-import '../../core/constant/color_const.dart';
-import '../../data/datasource/static/static.dart';
-import '../widget/on_boarding/logo_title.dart';
-import '../widget/on_boarding/slider_body_text.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 class OnBoarding extends GetView<OnBoardingControllerImp> {
   const OnBoarding({super.key});
@@ -15,7 +6,7 @@ class OnBoarding extends GetView<OnBoardingControllerImp> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: ColorConst.fifthColor,
+        backgroundColor: Colors.white,
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.w),
           child: Column(

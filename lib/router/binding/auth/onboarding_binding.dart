@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../controller/on_boarding_controller.dart';
+import '../../../controller/onboarding_controller.dart';
 
 class OnBoardingBinding extends Bindings {
   @override

@@ -23,7 +23,7 @@ class AppBarDetailsProduct extends GetView<HomeControllerImp> {
               controller.currentPage(0);
             },
             child: SvgPicture.asset(
-              ImageConst.fromFieldImageButtonBack,
+              ImageConst.buttonBack,
               height: 25.h,
               width: 25.w,
             ),

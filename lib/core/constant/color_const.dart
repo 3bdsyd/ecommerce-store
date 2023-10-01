@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
-
-import '../class/hex_color.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 class ColorConst {
   static Color whiteColor = HexColor('#ffffff');
-  static Color primaryColor = HexColor('#B5838D');
+  static Color darkColor = HexColor('#050A30');
+  static Color primaryColor = HexColor('#ff6489');
   static Color secondaryColor = HexColor('#E5989B');
   static Color thirdColor = HexColor('#6D6875');
   static Color fourthColor = HexColor('#FFB4A2');

@@ -22,7 +22,7 @@ class TitleWidget extends StatelessWidget {
           GestureDetector(
             onTap: () => Get.back(),
             child: SvgPicture.asset(
-              ImageConst.fromFieldImageButtonBack,
+              ImageConst.buttonBack,
               height: 25.h,
               width: 25.w,
             ),

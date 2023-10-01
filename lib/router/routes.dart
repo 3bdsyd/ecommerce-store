@@ -1,45 +1,57 @@
-import 'package:ecommerce_store/router/binding/home_binding.dart';
-import 'package:ecommerce_store/router/binding/signin_binding.dart';
-import 'package:ecommerce_store/router/binding/signup_binding.dart';
-import 'package:ecommerce_store/view/screen/sign_in.dart';
-import 'package:ecommerce_store/view/screen/splash_screen.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
-import '../view/screen/configure.dart';
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-import '../view/screen/details_product.dart';
-import '../view/screen/home.dart';
-import '../view/screen/information_auth.dart';
-
-import '../view/screen/order_complete.dart';
-import '../view/screen/order_failed.dart';
-import '../view/screen/otp_auth.dart';
-import '../view/screen/password_recovery.dart';
-import '../view/screen/sign_up.dart';
-import '../view/screen/on_boarding.dart';
-import 'binding/auth_binding.dart';
-import 'binding/on_boarding_binding.dart';
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+      designSize: const Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (BuildContext context, Widget? child) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeApp.themeData,
+          initialRoute: ScreenNames.splashScreen,
+          getPages: Routes.getPages,
+          initialBinding: CrudBinding(),
+        );
+      },
+    );
+  }
+}
 
 class Routes {
   static final List<GetPage<dynamic>> getPages = [
     GetPage(
       name: ScreenNames.splashScreen,
       page: () => const SplashScreen(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
-      name: ScreenNames.onBoardingScreen,
-      page: () => OnBoarding(),
-      binding: OnBoardingBinding(),
-      // middlewares: [
-      //   MyMiddleWare(),
-      // ],
-    ),
+        name: ScreenNames.onBoardingScreen,
+        page: () => const OnBoarding(),
+        binding: OnBoardingBinding(),
+        transition: Transition.downToUp,
+        transitionDuration: const Duration(milliseconds: 250),
+        curve: Curves.easeIn
+        // middlewares: [
+        //   MyMiddleWare(),
+        // ],
+        ),
     GetPage(
       name: ScreenNames.signUpScreen,
-      page: () => const SignUp(),
+      page: () => SignUp(),
       bindings: [
+        AuthBinding(),
         SignUpBinding(),
       ],
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
       name: ScreenNames.signInScreen,
@@ -48,6 +60,9 @@ class Routes {
         AuthBinding(),
         SignInBinding(),
       ],
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
       name: ScreenNames.passwordRecovery,
@@ -56,23 +71,32 @@ class Routes {
         AuthBinding(),
         SignInBinding(),
       ],
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
       name: ScreenNames.otpAuth,
-      page: () => const OTPAuth(),
+      page: () => const OtpScreen(),
       bindings: [
         AuthBinding(),
         SignInBinding(),
+        OtpBinding(),
       ],
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
-      name: ScreenNames.informationAuth,
-      page: () => const InformationAuth(),
-      bindings: [
-        AuthBinding(),
-        SignInBinding(),
-      ],
-    ),
+        name: ScreenNames.informationAuth,
+        page: () => const InformationAuth(),
+        bindings: [
+          AuthBinding(),
+          SignInBinding(),
+        ],
+        transition: Transition.downToUp,
+        transitionDuration: const Duration(milliseconds: 250),
+        curve: Curves.easeIn),
     GetPage(
       name: ScreenNames.configure,
       page: () => const Configure(),
@@ -80,24 +104,39 @@ class Routes {
         AuthBinding(),
         SignInBinding(),
       ],
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
       name: ScreenNames.home,
       page: () => const Home(),
       binding: HomeBinding(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
       name: ScreenNames.orderComplete,
       page: () => const OrderComplete(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
       name: ScreenNames.orderFailed,
       page: () => const OrderFailed(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
     GetPage(
       name: ScreenNames.detailsProduct,
       page: () => const DetailsProduct(),
       binding: HomeBinding(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
     ),
   ];
 }

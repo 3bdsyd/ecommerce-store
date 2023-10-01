@@ -1,10 +1,4 @@
-import 'package:ecommerce_store/core/class/status_request.dart';
-import 'package:ecommerce_store/core/fuctions/handling_data_controller.dart';
-import 'package:ecommerce_store/core/services/my_services.dart';
-import 'package:ecommerce_store/data/datasource/reomte/signup_remote.dart';
-import 'package:ecommerce_store/router/routes.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 abstract class SignUpController extends GetxController {
   void getData();
@@ -17,6 +11,7 @@ class SignUpControllerImp extends SignUpController {
 // ----------------------------  onInit the sign up controller   -----------------------------------
   @override
   void onInit() {
+    user.bindStream(_auth.authStateChanges());
     email = TextEditingController();
     username = TextEditingController();
     password = TextEditingController();
@@ -102,6 +97,50 @@ class SignUpControllerImp extends SignUpController {
   @override
   void returnToPage() {
     statusRequest = StatusRequest.none;
+    update();
+  }
+
+//----------------------------------------------------------------
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  Rx<User?> user = Rx<User?>(null);
+
+  Future<User?> signInWithGoogle() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser!.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      final UserCredential authResult =
+          await _auth.signInWithCredential(credential);
+      statusRequest = StatusRequest.success;
+      update();
+      final User? user = authResult.user;
+      statusRequest = StatusRequest.success;
+      Get.offNamed(ScreenNames.home);
+      update();
+      return user;
+    } catch (error) {
+      statusRequest = StatusRequest.failure;
+      update();
+      return null;
+    }
+  }
+
+  Future<void> signOut() async {
+    statusRequest = StatusRequest.loading;
+    update();
+    await _auth.signOut();
+    await _googleSignIn.signOut();
+    statusRequest = StatusRequest.success;
     update();
   }
 }

@@ -14,7 +14,7 @@ class ProductsList extends StatelessWidget {
     double sizeWidth = Platform.getSizeWidth(context);
     return Expanded(
       child: ScrollConfiguration(
-        behavior: MaterialScrollBehavior().copyWith(overscroll: false),
+        behavior: const MaterialScrollBehavior().copyWith(overscroll: false),
         child: GridView.builder(
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: numberOfCardsInLine(sizeWidth),

@@ -1,10 +1,14 @@
 class ImageConst {
   static const rootImages = 'assets/images/';
-  static const myLogo = '${rootImages}logo.png';
-
-  static const onBoardingLogo = '${rootImages}on_boarding_logo.svg';
+  static const myLogo = '${rootImages}logo_ecommerce.png';
+  static const splashAnimation = '${rootImages}animation_splash.json';
+  //----------------------------------------------------------------
   static const onBoardingImageOne = '${rootImages}on_boarding_one.png';
   static const onBoardingImageTow = '${rootImages}on_boarding_tow.png';
+  static const shopHomeOne = '${rootImages}shop_hom_one.jpeg';
+  static const shopHomeTow = '${rootImages}shop_home_tow.jpg';
+  static const threeOne = '${rootImages}three_one.jpg';
+  static const threeTow = '${rootImages}three_tow.jpg';
   static const onBoardingStart = '${rootImages}on_boarding_button_icon.svg';
 
   //----------------------------------------------------------------
@@ -12,11 +16,12 @@ class ImageConst {
   static const fromFieldImageTow = '${rootImages}Icon - L.svg';
   static const fromFieldImageThree = '${rootImages}lock.svg';
   static const fromFieldImageFour = '${rootImages}eye.svg';
-  static const fromFieldImageButtonBack =
-      '${rootImages}ion_chevron-back-circle-outline.svg';
+  static const buttonBack = '${rootImages}ion_chevron-back-circle-outline.svg';
+  static const animationLoading = '${rootImages}animation_loading.json';
 
   static const fromFieldImageCheckBox = '${rootImages}Icon.svg';
   static const fromFieldImageFacebook = '${rootImages}Facebook - Logo.svg';
+  static const googleLogo = '${rootImages}google_logo.svg';
   static const fromFieldImageSignUp = '${rootImages}log-in.svg';
   //----------------------------------------------------------------
   static const fromFieldImagePasswordRecovery = '${rootImages}Icon - R.svg';

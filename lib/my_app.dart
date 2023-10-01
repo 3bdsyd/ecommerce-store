@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/router/binding/crud_binding.dart';
-import 'package:ecommerce_store/router/routes.dart';
-import 'package:ecommerce_store/view/screen/splash_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-
-import 'core/theme/theme_data.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -20,7 +13,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeApp.themeData,
-          initialRoute: ScreenNames.home,
+          initialRoute: ScreenNames.splashScreen,
           getPages: Routes.getPages,
           initialBinding: CrudBinding(),
         );

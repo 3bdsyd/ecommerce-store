@@ -17,7 +17,7 @@ class ButtonBackConfigure extends StatelessWidget {
           Get.back();
         },
         child: SvgPicture.asset(
-          ImageConst.fromFieldImageButtonBack,
+          ImageConst.buttonBack,
           fit: BoxFit.scaleDown,
           width: 25.w,
           height: 25.w,

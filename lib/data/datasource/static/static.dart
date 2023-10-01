@@ -1,31 +1,26 @@
-import 'package:ecommerce_store/view/screen/return_products.dart';
-
-import '../../../core/constant/image_const.dart';
-
-import '../../model/home_model.dart';
-import '../../model/on_boarding_model.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
-    logoImage: ImageConst.onBoardingLogo,
-    titleText: 'Accessories Store',
+    logoImage: ImageConst.myLogo,
+    titleText: 'Oncho',
     bodyImageOne: ImageConst.onBoardingImageOne,
     bodyImageTow: ImageConst.onBoardingImageTow,
     bodyText: 'The best jewelry in \n The Town Now',
   ),
   OnBoardingModel(
-    logoImage: ImageConst.onBoardingLogo,
-    titleText: 'Accessories Store',
-    bodyImageOne: ImageConst.onBoardingImageOne,
-    bodyImageTow: ImageConst.onBoardingImageTow,
-    bodyText: 'The best jewelry in \n The Town Now',
+    logoImage: ImageConst.myLogo,
+    titleText: 'Oncho',
+    bodyImageOne: ImageConst.shopHomeOne,
+    bodyImageTow: ImageConst.shopHomeTow,
+    bodyText: 'Shop from home now',
   ),
   OnBoardingModel(
-    logoImage: ImageConst.onBoardingLogo,
-    titleText: 'Accessories Store',
-    bodyImageOne: ImageConst.onBoardingImageOne,
-    bodyImageTow: ImageConst.onBoardingImageTow,
-    bodyText: 'The best jewelry in \n The Town Now',
+    logoImage: ImageConst.myLogo,
+    titleText: 'Oncho',
+    bodyImageOne: ImageConst.threeOne,
+    bodyImageTow: ImageConst.threeTow,
+    bodyText: 'Enjoy good quality with \n constant discounts',
   ),
 ];
 

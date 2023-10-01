@@ -1,19 +1,8 @@
-import 'package:ecommerce_store/controller/signup_controller.dart';
-import 'package:ecommerce_store/core/class/handling_data_view.dart';
-import 'package:ecommerce_store/core/fuctions/fields_validators.dart';
-import 'package:ecommerce_store/view/widget/auth/button_sign_up.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-
-import '../../core/constant/image_const.dart';
-import '../widget/auth/button_back_title.dart';
-import '../widget/auth/button_sign_up_facebook.dart';
-import '../widget/auth/form_filed_widget.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/view/widget/auth/button_auth_google.dart';
 
 class SignUp extends GetView<SignUpControllerImp> {
   const SignUp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -26,11 +15,12 @@ class SignUp extends GetView<SignUpControllerImp> {
               widget: ListView(
                 children: [
                   SizedBox(
-                    height: 12.h,
+                    height: 20.h,
                   ),
-                  const ButtonBack(
-                    title: 'Getting Started',
-                    subTitle: 'Create an account to continue!',
+                  Text('Getting Started', style: context.textTheme.titleLarge),
+                  Text(
+                    'Create an account to continue!',
+                    style: context.textTheme.bodySmall,
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(
@@ -81,9 +71,19 @@ class SignUp extends GetView<SignUpControllerImp> {
                       ),
                     ),
                   ),
-                  const ButtonSignUpFacebook(),
+                  ButtonSignUpFacebook(
+                    onPressed: () {},
+                  ),
                   SizedBox(
                     height: 10.h,
+                  ),
+                  ButtonAuthGoogle(
+                    onPressed: () async {
+                      controller.signInWithGoogle();
+                    },
+                  ),
+                  SizedBox(
+                    height: 20.h,
                   ),
                 ],
               ),

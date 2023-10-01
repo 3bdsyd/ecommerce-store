@@ -1,14 +1,4 @@
-import 'package:ecommerce_store/controller/signin_controller.dart';
-import 'package:ecommerce_store/core/constant/image_const.dart';
-import 'package:ecommerce_store/core/fuctions/fields_validators.dart';
-import 'package:ecommerce_store/view/widget/auth/button_back_title.dart';
-import 'package:ecommerce_store/view/widget/auth/button_sign_up.dart';
-import 'package:ecommerce_store/view/widget/auth/form_filed_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-
-import '../widget/auth/button_sign_up_facebook.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 class SignIn extends GetView<SignInControllerImp> {
   const SignIn({super.key});
@@ -22,11 +12,15 @@ class SignIn extends GetView<SignInControllerImp> {
           child: ListView(
             children: [
               SizedBox(
-                height: 12.h,
+                height: 20.h,
               ),
-              const ButtonBack(
-                title: 'Let\'s Sign You In',
-                subTitle: 'Welcome back, you\'ve been missed!',
+              Text(
+                'Let\'s Sign You In',
+                style: context.textTheme.titleLarge,
+              ),
+              Text(
+                'Welcome back, you\'ve been missed!',
+                style: context.textTheme.bodySmall,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -65,7 +59,9 @@ class SignIn extends GetView<SignInControllerImp> {
                   ),
                 ),
               ),
-              const ButtonSignUpFacebook(),
+              ButtonSignUpFacebook(
+                onPressed: () {},
+              ),
             ],
           ),
         ),

@@ -36,7 +36,7 @@ class CheckPayment extends GetView<HomeControllerImp> {
                   Get.back();
                 },
                 child: SvgPicture.asset(
-                  ImageConst.fromFieldImageButtonBack,
+                  ImageConst.buttonBack,
                   width: 25.w,
                   height: 25.h,
                   fit: BoxFit.scaleDown,

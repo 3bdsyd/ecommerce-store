@@ -1,7 +1,8 @@
-import 'package:ecommerce_store/controller/signup_controller.dart';
+import 'package:ecommerce_store/core/constant/image_const.dart';
 import 'package:ecommerce_store/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 import 'status_request.dart';
 
@@ -38,28 +39,20 @@ class HandlingDataView extends StatelessWidget {
 class HandlingDataRequest extends StatelessWidget {
   final StatusRequest statusRequest;
   final Widget widget;
-  HandlingDataRequest({
+  const HandlingDataRequest({
     Key? key,
     required this.statusRequest,
     required this.widget,
   }) : super(key: key);
 
-  final SignUpControllerImp controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
-        ? const Center(child: Text('Loading...'))
+        ? Center(child: Lottie.asset(ImageConst.animationLoading))
         : statusRequest == StatusRequest.offlinefailure
-            ? GetBuilder<SignUpControllerImp>(
-                builder: (_) => Center(
-                  child: GestureDetector(
-                    onTap: () => controller.returnToPage(),
-                    child: const Text('Try again'),
-                  ),
-                ),
-              )
+            ? Center(child: Lottie.asset(ImageConst.animationLoading))
             : statusRequest == StatusRequest.serverfailure
-                ? const Center(child: Text('Serverfailure'))
+                ? Center(child: Lottie.asset(ImageConst.animationLoading))
                 : widget;
   }
 }

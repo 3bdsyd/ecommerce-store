@@ -16,6 +16,7 @@ class ButtonVerifye extends StatelessWidget {
       height: 40.h,
       width: double.infinity,
       child: ElevatedButton(
+        
         onPressed: () {
           verifye
               ? Get.toNamed(ScreenNames.informationAuth)
@@ -34,7 +35,9 @@ class ButtonVerifye extends StatelessWidget {
             Container(),
             Text(
               'Save',
-              style: context.textTheme.labelLarge,
+              style: context.textTheme.labelLarge!.copyWith(
+                color: ColorConst.whiteColor,
+              ),
             ),
             SvgPicture.asset(
               ImageConst.fromFieldImageLogIn,

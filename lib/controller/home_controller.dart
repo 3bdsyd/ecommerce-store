@@ -103,7 +103,6 @@ class HomeControllerImp extends HomeController {
   @override
   void changeCurrentPage(int index) {
     currentPage(index);
-    print(index);
   }
 
   //----------------------------------------------------------------
