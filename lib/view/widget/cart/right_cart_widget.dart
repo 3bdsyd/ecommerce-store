@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,7 +24,7 @@ final int index;
               );
             },
             child: SvgPicture.asset(
-              ImageConst.imageDeletedIcon,
+              IconConst.imageDeletedIcon,
               height: 20.h,
               width: 15.w,
             ),
@@ -37,7 +38,7 @@ final int index;
                       controller.myCategoryCart.keys.toList()[index].id);
                 },
                 child: SvgPicture.asset(
-                  ImageConst.imageMinusIcon,
+                  IconConst.imageMinusIcon,
                   height: 4.h,
                   width: 15.w,
                 ),
@@ -55,7 +56,7 @@ final int index;
                       controller.myCategoryCart.keys.toList()[index].id);
                 },
                 child: SvgPicture.asset(
-                  ImageConst.imagePlusIcon,
+                  IconConst.imagePlusIcon,
                   height: 11.h,
                   width: 15.w,
                 ),

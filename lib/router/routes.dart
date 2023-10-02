@@ -1,50 +1,29 @@
 import 'package:ecommerce_store/core/constant/package_const.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(360, 690),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (BuildContext context, Widget? child) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          theme: ThemeApp.themeData,
-          initialRoute: ScreenNames.splashScreen,
-          getPages: Routes.getPages,
-          initialBinding: CrudBinding(),
-        );
-      },
-    );
-  }
-}
-
 class Routes {
   static final List<GetPage<dynamic>> getPages = [
     GetPage(
       name: ScreenNames.splashScreen,
       page: () => const SplashScreen(),
+      binding: SplashBinding(),
       transition: Transition.downToUp,
       transitionDuration: const Duration(milliseconds: 250),
       curve: Curves.easeIn,
     ),
     GetPage(
-        name: ScreenNames.onBoardingScreen,
-        page: () => const OnBoarding(),
-        binding: OnBoardingBinding(),
-        transition: Transition.downToUp,
-        transitionDuration: const Duration(milliseconds: 250),
-        curve: Curves.easeIn
-        // middlewares: [
-        //   MyMiddleWare(),
-        // ],
-        ),
+      name: ScreenNames.onBoardingScreen,
+      page: () => const OnBoardingScreen(),
+      binding: OnBoardingBinding(),
+      transition: Transition.downToUp,
+      transitionDuration: const Duration(milliseconds: 250),
+      curve: Curves.easeIn,
+      middlewares: [
+        MiddleWare(),
+      ],
+    ),
     GetPage(
       name: ScreenNames.signUpScreen,
-      page: () => SignUp(),
+      page: () => const SignUp(),
       bindings: [
         AuthBinding(),
         SignUpBinding(),
@@ -55,7 +34,7 @@ class Routes {
     ),
     GetPage(
       name: ScreenNames.signInScreen,
-      page: () => const SignIn(),
+      page: () => SignIn(),
       bindings: [
         AuthBinding(),
         SignInBinding(),

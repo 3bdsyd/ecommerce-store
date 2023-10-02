@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -26,17 +27,17 @@ class Profile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SvgPicture.asset(ImageConst.imageRectangleThree),
-                        SvgPicture.asset(ImageConst.imageRectangleTow),
-                        SvgPicture.asset(ImageConst.imageRectangleOne),
+                        SvgPicture.asset(IconConst.imageRectangleThree),
+                        SvgPicture.asset(IconConst.imageRectangleTow),
+                        SvgPicture.asset(IconConst.imageRectangleOne),
                       ],
                     ),
                   ),
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      SvgPicture.asset(ImageConst.imageEllipseOne),
-                      SvgPicture.asset(ImageConst.imageEllipseTow),
+                      SvgPicture.asset(IconConst.imageEllipseOne),
+                      SvgPicture.asset(IconConst.imageEllipseTow),
                       Image.asset(ImageConst.imageProfile1),
                     ],
                   ),

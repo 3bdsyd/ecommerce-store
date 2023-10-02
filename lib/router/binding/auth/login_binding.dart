@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/controller/signin_controller.dart';
+import 'package:ecommerce_store/controller/auth/login_controller.dart';
 import 'package:get/get.dart';
 
 class SignInBinding extends Bindings {

@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -52,7 +53,7 @@ class ChosePayment extends GetView<HomeControllerImp> {
                       SizedBox(
                         width: 10.w,
                       ),
-                      SvgPicture.asset(ImageConst.imagesLook,
+                      SvgPicture.asset(IconConst.imagesLook,
                           width: 15.w, fit: BoxFit.scaleDown),
                       SizedBox(
                         width: 10.w,
@@ -192,11 +193,11 @@ class ChosePayment extends GetView<HomeControllerImp> {
             ),
             child: Row(
               children: [
-                SvgPicture.asset(ImageConst.imagesImageIcon),
+                SvgPicture.asset(IconConst.imagesImageIcon),
                 // ignore: prefer_const_constructors
                 Spacer(),
                 SvgPicture.asset(
-                  ImageConst.imagesVoctorChat,
+                  IconConst.imagesVoctorChat,
                   width: 25,
                   height: 25,
                 ),

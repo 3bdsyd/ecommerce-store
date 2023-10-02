@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -12,13 +13,13 @@ class ConfigureStack extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        SvgPicture.asset(ImageConst.configureImageEllipseOne),
-        SvgPicture.asset(ImageConst.configureImageEllipseTow),
-        SvgPicture.asset(ImageConst.configureImageEllipseThree),
+        SvgPicture.asset(IconConst.configureImageEllipseOne),
+        SvgPicture.asset(IconConst.configureImageEllipseTow),
+        SvgPicture.asset(IconConst.configureImageEllipseThree),
         SvgPicture.asset(
           filedScreen ?? false
-              ? ImageConst.imagesShape
-              : ImageConst.configureImageVector,
+              ? IconConst.imagesShape
+              : IconConst.configureImageVector,
         ),
       ],
     );

@@ -1,16 +1,19 @@
 import 'package:ecommerce_store/core/constant/package_const.dart';
 
-class LogoTitle extends GetView<OnBoardingControllerImp> {
-  const LogoTitle({super.key});
+class LogoTitle extends StatelessWidget {
+  final int index;
+  const LogoTitle({
+    super.key,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final int index = controller.currentPage;
     return Column(
       children: [
         Container(
-          height: 90.h,
-          width: 90.w,
+          height: 80.h,
+          width: 80.w,
           alignment: Alignment.center,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
@@ -26,16 +29,11 @@ class LogoTitle extends GetView<OnBoardingControllerImp> {
             onBoardingList[index].logoImage,
           ),
         ),
-        SizedBox(
-          height: 5.h,
-        ),
         Text(
           onBoardingList[index].titleText,
-          style: context.textTheme.titleSmall!
-              .copyWith(color: ColorConst.darkColor),
-        ),
-        SizedBox(
-          height: 10.h,
+          style: context.textTheme.titleSmall!.copyWith(
+            color: ColorConst.darkColor,
+          ),
         ),
       ],
     );

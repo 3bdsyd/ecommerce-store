@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:ecommerce_store/core/constant/package_const.dart';
 
 class ButtonBack extends StatelessWidget {
@@ -22,7 +23,7 @@ class ButtonBack extends StatelessWidget {
                   Get.back();
                 },
                 child: SvgPicture.asset(
-                  ImageConst.buttonBack,
+                  IconConst.buttonBack,
                   width: 25.w,
                   height: 25.h,
                   fit: BoxFit.scaleDown,

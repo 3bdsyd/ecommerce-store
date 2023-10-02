@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:ecommerce_store/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -34,7 +35,7 @@ class ButtonContinue extends StatelessWidget {
               style: context.textTheme.labelLarge,
             ),
             SvgPicture.asset(
-              ImageConst.fromFieldImageLogIn,
+              IconConst.fromFieldImageLogIn,
               width: 28.w,
               fit: BoxFit.scaleDown,
             ),

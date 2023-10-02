@@ -5,6 +5,11 @@ class MyServices extends GetxService {
 
   Future<MyServices> init() async {
 //----------------------------------------------------------------
+
+    WidgetsFlutterBinding.ensureInitialized();
+
+//----------------------------------------------------------------
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -15,15 +20,13 @@ class MyServices extends GetxService {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    WidgetsFlutterBinding.ensureInitialized();
-    await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
 
 //----------------------------------------------------------------
 
     await GetStorage.init();
     getBox = GetStorage();
-    // getBox.remove('rankPage');
-    // currentPage = GetStorage().read('rankPage');
+    
+//----------------------------------------------------------------
     return this;
   }
 }

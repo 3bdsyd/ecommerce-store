@@ -1,4 +1,5 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -27,10 +28,10 @@ class ButtonNavBar extends GetView<HomeControllerImp> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           items: <BottomNavigationBarItem>[
-            buttonItems(image: ImageConst.imageVectorHome),
-            buttonItems(image: ImageConst.imageVectorLove),
-            buttonItems(image: ImageConst.imageVectorCart),
-            buttonItems(image: ImageConst.imageVectorPerson),
+            buttonItems(image: IconConst.imageVectorHome),
+            buttonItems(image: IconConst.imageVectorLove),
+            buttonItems(image: IconConst.imageVectorCart),
+            buttonItems(image: IconConst.imageVectorPerson),
           ],
           currentIndex: controller.currentPage.value < 4
               ? controller.currentPage.value

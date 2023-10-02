@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,7 +15,7 @@ class StoreGuarantee extends StatelessWidget {
       children: [
         Row(
           children: [
-            SvgPicture.asset(ImageConst.imagesCheckLine),
+            SvgPicture.asset(IconConst.imagesCheckLine),
             SizedBox(
               width: 3.w,
             ),
@@ -23,7 +24,7 @@ class StoreGuarantee extends StatelessWidget {
               style: context.textTheme.labelMedium,
             ),
             const Spacer(),
-            SvgPicture.asset(ImageConst.imagesHistoryLine),
+            SvgPicture.asset(IconConst.imagesHistoryLine),
             SizedBox(
               width: 3.w,
             ),
@@ -38,7 +39,7 @@ class StoreGuarantee extends StatelessWidget {
         ),
         Row(
           children: [
-            SvgPicture.asset(ImageConst.imagesPriceLine),
+            SvgPicture.asset(IconConst.imagesPriceLine),
             SizedBox(
               width: 3.w,
             ),
@@ -47,7 +48,7 @@ class StoreGuarantee extends StatelessWidget {
               style: context.textTheme.labelMedium,
             ),
             const Spacer(),
-            SvgPicture.asset(ImageConst.imagesWalletLine),
+            SvgPicture.asset(IconConst.imagesWalletLine),
             SizedBox(
               width: 3.w,
             ),

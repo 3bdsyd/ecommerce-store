@@ -1,4 +1,5 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -32,7 +33,7 @@ class TitleBack extends GetView<HomeControllerImp> {
                   : controller.changeCurrentPageInformation(0);
             },
             child: SvgPicture.asset(
-              ImageConst.buttonBack,
+              IconConst.buttonBack,
               height: 25.h,
               width: 25.w,
             ),

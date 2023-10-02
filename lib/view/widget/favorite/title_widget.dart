@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -22,7 +23,7 @@ class TitleWidget extends StatelessWidget {
           GestureDetector(
             onTap: () => Get.back(),
             child: SvgPicture.asset(
-              ImageConst.buttonBack,
+              IconConst.buttonBack,
               height: 25.h,
               width: 25.w,
             ),
@@ -37,8 +38,8 @@ class TitleWidget extends StatelessWidget {
           ),
           SvgPicture.asset(
             favoriteScreen
-                ? ImageConst.imageVectorLove
-                : ImageConst.imageVectorCart,
+                ? IconConst.imageVectorLove
+                : IconConst.imageVectorCart,
             height: 20.h,
             width: 20.w,
           )

@@ -1,4 +1,5 @@
 import 'package:ecommerce_store/core/constant/color_const.dart';
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:ecommerce_store/core/constant/image_const.dart';
 import 'package:ecommerce_store/view/widget/auth/button_back_title.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +36,7 @@ class DetailsInformation extends StatelessWidget {
                           color: ColorConst.primaryColor,
                         ),
                         child: SvgPicture.asset(
-                          ImageConst.imageCamera,
+                          IconConst.imageCamera,
                           fit: BoxFit.scaleDown,
                         ),
                       ),

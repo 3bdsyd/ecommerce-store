@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -36,7 +37,7 @@ class CheckPayment extends GetView<HomeControllerImp> {
                   Get.back();
                 },
                 child: SvgPicture.asset(
-                  ImageConst.buttonBack,
+                  IconConst.buttonBack,
                   width: 25.w,
                   height: 25.h,
                   fit: BoxFit.scaleDown,

@@ -1,9 +1,9 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../core/constant/image_const.dart';
 import '../widget/configure_widget/cofigure_stack.dart';
 import '../widget/order_complete/button_order_failed.dart';
 import '../widget/orders_history/title_back.dart';
@@ -50,7 +50,7 @@ class OrderFailed extends StatelessWidget {
               SizedBox(
                 height: 50.h,
               ),
-              SvgPicture.asset(ImageConst.imagesNoteIcon),
+              SvgPicture.asset(IconConst.imagesNoteIcon),
               SizedBox(
                 height: 20.h,
               ),

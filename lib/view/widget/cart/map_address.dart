@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -26,7 +27,7 @@ class MapAddress extends GetView<HomeControllerImp>{
                 controller.changeStateMap(false);
               },
               child: SvgPicture.asset(
-                ImageConst.buttonBack,
+                IconConst.buttonBack,
                 width: 25.w,
                 height: 25.h,
                 fit: BoxFit.scaleDown,
@@ -63,13 +64,13 @@ class MapAddress extends GetView<HomeControllerImp>{
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
                     child: SvgPicture.asset(
-                      ImageConst.imageMagnifyingglass,
+                      IconConst.imageMagnifyingglass,
                     ),
                   ),
                   suffixIcon: Padding(
                     padding: const EdgeInsets.all(12),
                     child: SvgPicture.asset(
-                      ImageConst.imageMicrophone,
+                      IconConst.imageMicrophone,
                     ),
                   ),
                 ),

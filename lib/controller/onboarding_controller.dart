@@ -1,37 +1,38 @@
-import 'package:ecommerce_store/core/services/my_services.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../data/datasource/static/static.dart';
-import '../router/routes.dart';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
 abstract class OnBoardingController extends GetxController {
-  nextOnBoardingPage();
-  onChangeOnBoardingPag(int value);
+  // Go to the next page
+  nextPage();
+
+  // Change the current page
+  onChangePage(int value);
 }
 
 class OnBoardingControllerImp extends OnBoardingController {
+//----------------------------------------------------------------
   final MyServices myServicesController = Get.find();
 
   int currentPage = 0;
+
   late PageController pageController;
 
-  //----------------------------------------------------------------
+//----------------------------------------------------------------
 
   @override
   void onInit() {
-    super.onInit();
-
     pageController = PageController();
+    super.onInit();
   }
 
+//----------------------------------------------------------------
+
   @override
-  void nextOnBoardingPage() {
+  void nextPage() {
     if (currentPage < onBoardingList.length - 1) {
       currentPage++;
       pageController.animateToPage(
         currentPage,
-        duration: const Duration(milliseconds: 800),
+        duration: const Duration(milliseconds: 600),
         curve: Curves.easeIn,
       );
     } else {
@@ -41,10 +42,10 @@ class OnBoardingControllerImp extends OnBoardingController {
     update();
   }
 
-  //----------------------------------------------------------------
+//----------------------------------------------------------------
 
   @override
-  onChangeOnBoardingPag(int value) {
+  onChangePage(int value) {
     currentPage = value;
     update();
   }

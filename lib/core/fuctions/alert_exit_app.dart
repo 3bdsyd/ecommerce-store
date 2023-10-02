@@ -1,34 +1,28 @@
-// import 'dart:io';
+import 'dart:io';
+import 'package:ecommerce_store/core/constant/package_const.dart';
 
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:white_sooq/core/Constants/colors.dart';
-
-// Future<bool> alertExitApp(BuildContext context) {
-//   Get.defaultDialog(
-//     title: "تنبيه",
-//     titleStyle: context.textTheme.bodyMedium,
-//     middleText: "هل تريد الخروج من التطبيق",
-//     actions: [
-//       ElevatedButton(
-//         style: ElevatedButton.styleFrom(
-//           backgroundColor: AppColors.mainColor,
-//         ),
-//         onPressed: () {
-//           exit(0);
-//         },
-//         child: const Text("تأكيد"),
-//       ),
-//       ElevatedButton(
-//         style: ElevatedButton.styleFrom(
-//           backgroundColor: AppColors.mainColor,
-//         ),
-//         onPressed: () {
-//           Get.back();
-//         },
-//         child: const Text("الغاء"),
-//       ),
-//     ],
-//   );
-//   return Future.value(true);
-// }
+Future<bool> alertExitApp(BuildContext context) {
+  Get.defaultDialog(
+    title: "Note",
+    titleStyle: context.textTheme.bodyMedium,
+    middleText: 'Do you want to exit the application ?',
+    actions: [
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: ColorConst.primaryColor,
+        ),
+        onPressed: () => exit(0),
+        child: const Text("Ok"),
+      ),
+      ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: ColorConst.primaryColor,
+        ),
+        onPressed: () => Get.back(),
+        child: const Text("Cancel"),
+      ),
+    ],
+    barrierDismissible: false,
+  );
+  return Future.value(true);
+}

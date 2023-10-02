@@ -3,12 +3,12 @@ import 'package:ecommerce_store/core/constant/package_const.dart';
 abstract class SignUpController extends GetxController {
   void getData();
   void changeObscureText();
-  void changeApprovalStatusStandards();
-  void returnToPage();
+  void changeApprovalStandards();
 }
 
 class SignUpControllerImp extends SignUpController {
-// ----------------------------  onInit the sign up controller   -----------------------------------
+//----------------------------------------------------------------
+
   @override
   void onInit() {
     user.bindStream(_auth.authStateChanges());
@@ -18,7 +18,8 @@ class SignUpControllerImp extends SignUpController {
     super.onInit();
   }
 
-// ----------------------------  dispose the sign up controller   -----------------------------------
+//----------------------------------------------------------------
+
   @override
   void dispose() {
     email.dispose();
@@ -29,15 +30,19 @@ class SignUpControllerImp extends SignUpController {
 
   SignUpRemote signUpRemoteController = SignUpRemote(Get.find());
   final MyServices myServicesController = Get.find();
+
 //----------------------------------------------------------------
+
   final GlobalKey<FormState> globalKeySignUp = GlobalKey<FormState>();
-//----------------------------------------------------------------
   late TextEditingController email;
   late TextEditingController username;
   late TextEditingController password;
+
 //----------------------------------------------------------------
+
   bool obscureTextShow = true;
   bool approvalOfStandards = true;
+
 //----------------------------------------------------------------
 
   Map<String, dynamic> data = {};
@@ -49,89 +54,92 @@ class SignUpControllerImp extends SignUpController {
   void getData() async {
     if (globalKeySignUp.currentState!.validate()) {
       if (approvalOfStandards) {
-        statusRequest = StatusRequest.loading;
-        update();
-        var response = await signUpRemoteController.getData(
-          email.text,
-          username.text,
-          password.text,
-        );
-        // print("is resp in controller: ----> $response ");
-        statusRequest = handlingData(response);
-        if (StatusRequest.success == statusRequest) {
-          if (response['code'] == 0) {
-            data.addAll(response['data']);
-            Get.offNamed(ScreenNames.signInScreen);
-            // print(data['Token']);
-            myServicesController.getBox.write('Token', data['Token']);
-            // print(myServicesController.getBox.read('Token'));
-          } else {
-            Get.snackbar('Error', response['message']);
-            statusRequest = StatusRequest.failure;
-            // print('error in server');
+        try {
+          statusRequest = StatusRequest.loading;
+          update();
+          var response = await signUpRemoteController.getData(
+            email.text,
+            username.text,
+            password.text,
+          );
+          statusRequest = handlingData(response);
+          if (StatusRequest.success == statusRequest) {
+            if (response['code'] == 0) {
+              data.addAll(response['data']);
+              Get.offNamed(ScreenNames.signInScreen);
+              myServicesController.getBox.write('Token', data['Token']);
+            } else {
+              Get.snackbar(
+                '',
+                '',
+                backgroundColor: ColorConst.primaryColor,
+                titleText: const Text('Error'),
+                messageText: Text(
+                  response['message'],
+                ),
+              );
+              statusRequest = StatusRequest.failure;
+            }
           }
+          update();
+        } catch (e) {
+          Get.snackbar('Error', 'The login process has finished');
         }
-        update();
       } else {
         Get.snackbar('Note', 'You must agree to the terms');
       }
     }
+    update();
   }
 //----------------------------------------------------------------
 
   @override
   void changeObscureText() {
     obscureTextShow = !obscureTextShow;
-    // print(obscureTextShow.value);
     update();
   }
+
 //----------------------------------------------------------------
 
   @override
-  void changeApprovalStatusStandards() {
+  void changeApprovalStandards() {
     approvalOfStandards = !approvalOfStandards;
     update();
   }
-//----------------------------------------------------------------
-
-  @override
-  void returnToPage() {
-    statusRequest = StatusRequest.none;
-    update();
-  }
-
-//----------------------------------------------------------------
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   Rx<User?> user = Rx<User?>(null);
 
-  Future<User?> signInWithGoogle() async {
-    statusRequest = StatusRequest.loading;
-    update();
-    try {
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+//----------------------------------------------------------------
 
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser!.authentication;
+  Future<void> registerWithGoogle() async {
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleSignInAuthentication =
+          await googleSignInAccount!.authentication;
 
       final AuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
-        idToken: googleAuth.idToken,
+        accessToken: googleSignInAuthentication.accessToken,
+        idToken: googleSignInAuthentication.idToken,
       );
-      final UserCredential authResult =
+
+      final UserCredential userCredential =
           await _auth.signInWithCredential(credential);
-      statusRequest = StatusRequest.success;
-      update();
-      final User? user = authResult.user;
-      statusRequest = StatusRequest.success;
-      Get.offNamed(ScreenNames.home);
-      update();
-      return user;
-    } catch (error) {
-      statusRequest = StatusRequest.failure;
-      update();
-      return null;
+      print('111111111111111111111111');
+      final User? user = userCredential.user;
+      print('dfsdf');
+      if (user != null) {
+        // Send a verification email to the user's account.
+        await user.sendEmailVerification();
+
+        Get.snackbar(
+            'Success', 'Registration successful! Verification email sent.');
+      }
+    } catch (e) {
+      print(e);
+      Get.snackbar('Error', 'Registration failed.');
     }
   }
 
@@ -141,6 +149,7 @@ class SignUpControllerImp extends SignUpController {
     await _auth.signOut();
     await _googleSignIn.signOut();
     statusRequest = StatusRequest.success;
+    Get.snackbar('Success', 'You have successfully logged out');
     update();
   }
 }

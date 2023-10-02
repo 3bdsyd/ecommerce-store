@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -86,8 +87,8 @@ class FormFieldInformation extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     child: SvgPicture.asset(
                       number
-                          ? ImageConst.fromFieldImagePasswordRecovery
-                          : ImageConst.imageMovingIn,
+                          ? IconConst.fromFieldImagePasswordRecovery
+                          : IconConst.imageMovingIn,
                       fit: BoxFit.scaleDown,
                     ),
                   )

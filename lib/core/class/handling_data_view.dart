@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constant/animation_const.dart';
 import 'package:ecommerce_store/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -48,11 +48,11 @@ class HandlingDataRequest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
-        ? Center(child: Lottie.asset(ImageConst.animationLoading))
+        ? Center(child: Lottie.asset(AnimationConst.loadingAnimation))
         : statusRequest == StatusRequest.offlinefailure
-            ? Center(child: Lottie.asset(ImageConst.animationLoading))
+            ? Center(child: Lottie.asset(AnimationConst.loadingAnimation))
             : statusRequest == StatusRequest.serverfailure
-                ? Center(child: Lottie.asset(ImageConst.animationLoading))
+                ? Center(child: Lottie.asset(AnimationConst.loadingAnimation))
                 : widget;
   }
 }

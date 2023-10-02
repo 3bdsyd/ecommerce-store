@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,7 +25,7 @@ class ImageNameCartOrder extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SvgPicture.asset(
-                  ImageConst.imagesHoppingBag,
+                  IconConst.imagesHoppingBag,
                   height: 30,
                   width: 20,
                   fit: BoxFit.scaleDown,

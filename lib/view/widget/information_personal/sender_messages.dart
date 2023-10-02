@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,7 +24,7 @@ class SenderMessages extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 5.w),
           child: Row(
             children: [
-              SvgPicture.asset(ImageConst.imagesVoctorChat),
+              SvgPicture.asset(IconConst.imagesVoctorChat),
               SizedBox(
                 width: 8.w,
               ),
@@ -42,7 +43,7 @@ class SenderMessages extends StatelessWidget {
                     suffixIcon: Padding(
                       padding: const EdgeInsets.all(10),
                       child: SvgPicture.asset(
-                        ImageConst.imagesSendIcon,
+                        IconConst.imagesSendIcon,
                       ),
                     ),
                     border: OutlineInputBorder(
@@ -66,7 +67,7 @@ class SenderMessages extends StatelessWidget {
               SizedBox(
                 width: 8.w,
               ),
-              SvgPicture.asset(ImageConst.imagesVectorChatTow),
+              SvgPicture.asset(IconConst.imagesVectorChatTow),
             ],
           ),
         ),

@@ -1,3 +1,4 @@
+import 'package:ecommerce_store/core/constant/icon_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -66,7 +67,7 @@ class FromFiledPassword extends StatelessWidget {
             suffixIcon: Padding(
               padding: const EdgeInsets.all(10),
               child: SvgPicture.asset(
-                ImageConst.fromFieldImagePasswordRecovery,
+                IconConst.fromFieldImagePasswordRecovery,
               ),
             ),
           ),
