@@ -9,5 +9,8 @@
         "pinable",
         "Ranimomar",
         "Voctor"
-    ]
+    ],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": false
 }

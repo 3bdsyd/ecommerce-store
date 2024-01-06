@@ -1,11 +1,5 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_image.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -27,18 +21,18 @@ class Profile extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SvgPicture.asset(IconConst.imageRectangleThree),
-                        SvgPicture.asset(IconConst.imageRectangleTow),
-                        SvgPicture.asset(IconConst.imageRectangleOne),
+                        SvgPicture.asset(AppIcon.imageRectangleThree),
+                        SvgPicture.asset(AppIcon.imageRectangleTow),
+                        SvgPicture.asset(AppIcon.imageRectangleOne),
                       ],
                     ),
                   ),
                   Stack(
                     alignment: Alignment.center,
                     children: [
-                      SvgPicture.asset(IconConst.imageEllipseOne),
-                      SvgPicture.asset(IconConst.imageEllipseTow),
-                      Image.asset(ImageConst.imageProfile1),
+                      SvgPicture.asset(AppIcon.imageEllipseOne),
+                      SvgPicture.asset(AppIcon.imageEllipseTow),
+                      Image.asset(AppImage.imageProfile1),
                     ],
                   ),
                 ],
@@ -51,7 +45,7 @@ class Profile extends StatelessWidget {
                       'Welcome, Ranim',
                       style: context.textTheme.bodyMedium!.copyWith(
                         fontWeight: FontWeight.w400,
-                        color: ColorConst.sixthColor,
+                        color: AppColor.sixthColor,
                         fontSize: 18,
                       ),
                       overflow: TextOverflow.ellipsis,

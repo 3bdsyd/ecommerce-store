@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 import '../information_auth/form_field_information.dart';
 
 class CheckAddress extends GetView<HomeControllerImp> {
@@ -83,7 +83,7 @@ class CheckAddress extends GetView<HomeControllerImp> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.fromBorderSide(
-                      BorderSide(color: ColorConst.primaryColor),
+                      BorderSide(color: AppColor.primaryColor),
                     ),
                   ),
                   child: Text(
@@ -98,7 +98,7 @@ class CheckAddress extends GetView<HomeControllerImp> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.fromBorderSide(
-                      BorderSide(color: ColorConst.primaryColor),
+                      BorderSide(color: AppColor.primaryColor),
                     ),
                   ),
                   child: Text(
@@ -124,7 +124,7 @@ class CheckAddress extends GetView<HomeControllerImp> {
                     // controller.nextPagePayment();
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: ColorConst.primaryColor,
+                    backgroundColor: AppColor.primaryColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),

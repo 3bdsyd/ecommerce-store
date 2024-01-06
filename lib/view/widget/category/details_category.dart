@@ -1,12 +1,5 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
 
 class DetailsCategory extends GetView<HomeControllerImp> {
   const DetailsCategory({
@@ -38,7 +31,7 @@ class DetailsCategory extends GetView<HomeControllerImp> {
                     ? controller.myCategoriesFavorite[index].discretionCategory
                     : controller.myCategoryList[index].discretionCategory,
                 style: context.textTheme.labelSmall!
-                    .copyWith(color: ColorConst.eighthColor, fontSize: 11),
+                    .copyWith(color: AppColor.eighthColor, fontSize: 11),
                 overflow: TextOverflow.ellipsis,
               ),
             ],
@@ -61,16 +54,16 @@ class DetailsCategory extends GetView<HomeControllerImp> {
                     : controller.myCategoryList[index].id,
               )
                   ? SvgPicture.asset(
-                      IconConst.imageFavoriteTow,
+                      AppIcon.imageFavoriteTow,
                       width: 20.w,
                       height: 20.h,
                     )
                   : SvgPicture.asset(
-                      IconConst.imageVectorLove,
+                      AppIcon.imageVectorLove,
                       width: 20.w,
                       height: 20.h,
                       colorFilter: ColorFilter.mode(
-                        ColorConst.secondaryColor,
+                        AppColor.secondaryColor,
                         BlendMode.srcIn,
                       ),
                     ),

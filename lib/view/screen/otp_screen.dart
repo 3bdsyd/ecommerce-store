@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class OtpScreen extends GetView<OtpControllerImp> {
   const OtpScreen({super.key});
@@ -62,7 +62,7 @@ class OtpScreen extends GetView<OtpControllerImp> {
                                 controller.isActive.value ? 'Recode' : '',
                                 style: context.textTheme.labelMedium!.copyWith(
                                   fontWeight: FontWeight.w600,
-                                  color: ColorConst.primaryColor,
+                                  color: AppColor.primaryColor,
                                   fontSize: 12,
                                 ),
                               ),

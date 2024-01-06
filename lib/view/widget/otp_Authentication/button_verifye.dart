@@ -1,12 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
-import '../../../router/routes.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ButtonVerifye extends StatelessWidget {
   const ButtonVerifye({super.key, required this.verifye});
@@ -17,14 +9,13 @@ class ButtonVerifye extends StatelessWidget {
       height: 40.h,
       width: double.infinity,
       child: ElevatedButton(
-        
         onPressed: () {
           verifye
-              ? Get.toNamed(ScreenNames.informationAuth)
-              : Get.toNamed(ScreenNames.configure);
+              ? Get.toNamed(AppNameScreen.informationAuth)
+              : Get.toNamed(AppNameScreen.configure);
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: ColorConst.primaryColor,
+          backgroundColor: AppColor.primaryColor,
           minimumSize: Size(30.w, 40.h),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -37,11 +28,11 @@ class ButtonVerifye extends StatelessWidget {
             Text(
               'Save',
               style: context.textTheme.labelLarge!.copyWith(
-                color: ColorConst.whiteColor,
+                color: AppColor.whiteColor,
               ),
             ),
             SvgPicture.asset(
-              IconConst.fromFieldImageLogIn,
+              AppIcon.fromFieldImageLogIn,
               width: 25.w,
               fit: BoxFit.scaleDown,
             ),

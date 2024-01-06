@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 import '../../../data/datasource/static/static.dart';
 
 class ItemsOrder extends GetView<HomeControllerImp> {
@@ -44,7 +44,7 @@ class ItemsOrder extends GetView<HomeControllerImp> {
         boxShadow: controller.currentOrderItem.value == index
             ? [
                 BoxShadow(
-                  color: ColorConst.secondaryColor.withOpacity(.2),
+                  color: AppColor.secondaryColor.withOpacity(.2),
                   blurRadius: 5,
                   spreadRadius: 5,
                 ),
@@ -53,9 +53,9 @@ class ItemsOrder extends GetView<HomeControllerImp> {
                 const BoxShadow(color: Colors.transparent),
               ],
         color: controller.currentOrderItem.value == index
-            ? ColorConst.secondaryColor
+            ? AppColor.secondaryColor
             : Colors.transparent,
-        border: Border.all(color: ColorConst.secondaryColor),
+        border: Border.all(color: AppColor.secondaryColor),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(
@@ -63,7 +63,7 @@ class ItemsOrder extends GetView<HomeControllerImp> {
         style: context.textTheme.labelLarge!.copyWith(
           color: controller.currentOrderItem.value == index
               ? Colors.white
-              : ColorConst.secondaryColor,
+              : AppColor.secondaryColor,
         ),
       ),
     );

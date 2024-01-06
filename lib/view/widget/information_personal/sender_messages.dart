@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class SenderMessages extends StatelessWidget {
   const SenderMessages({super.key});
@@ -17,33 +10,33 @@ class SenderMessages extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 22.w),
           child: Divider(
-            color: ColorConst.thirdColor,
+            color: AppColor.thirdColor,
           ),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 5.w),
           child: Row(
             children: [
-              SvgPicture.asset(IconConst.imagesVoctorChat),
+              SvgPicture.asset(AppIcon.imagesVoctorChat),
               SizedBox(
                 width: 8.w,
               ),
               Expanded(
                 child: TextField(
                   style: context.textTheme.labelLarge!.copyWith(
-                    color: ColorConst.thirdColor,
+                    color: AppColor.thirdColor,
                   ),
                   decoration: InputDecoration(
                     hintText: 'iMessage',
                     hintStyle: context.textTheme.labelLarge!.copyWith(
-                      color: ColorConst.thirdColor.withOpacity(.3),
+                      color: AppColor.thirdColor.withOpacity(.3),
                     ),
                     contentPadding: const EdgeInsets.only(
                         left: 15, right: 15, top: 10, bottom: 10),
                     suffixIcon: Padding(
                       padding: const EdgeInsets.all(10),
                       child: SvgPicture.asset(
-                        IconConst.imagesSendIcon,
+                        AppIcon.imagesSendIcon,
                       ),
                     ),
                     border: OutlineInputBorder(
@@ -67,7 +60,7 @@ class SenderMessages extends StatelessWidget {
               SizedBox(
                 width: 8.w,
               ),
-              SvgPicture.asset(IconConst.imagesVectorChatTow),
+              SvgPicture.asset(AppIcon.imagesVectorChatTow),
             ],
           ),
         ),

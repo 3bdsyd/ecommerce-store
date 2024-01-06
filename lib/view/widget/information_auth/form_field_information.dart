@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 // ignore: must_be_immutable
 class FormFieldInformation extends StatelessWidget {
@@ -27,22 +20,22 @@ class FormFieldInformation extends StatelessWidget {
           child: TextFormField(
             enabled: !mapIcon,
             cursorWidth: 1,
-            cursorColor: ColorConst.thirdColor,
+            cursorColor: AppColor.thirdColor,
             style: number
                 ? context.textTheme.labelLarge!.copyWith(
-                    color: ColorConst.thirdColor,
+                    color: AppColor.thirdColor,
                     fontFamily: 'SF Pro Display',
                     fontWeight: FontWeight.w700,
                     fontSize: 18,
                   )
                 : context.textTheme.labelLarge!.copyWith(
-                    color: ColorConst.thirdColor,
+                    color: AppColor.thirdColor,
                   ),
             keyboardType: number ? TextInputType.number : TextInputType.text,
             decoration: InputDecoration(
               hintText: hintText,
               hintStyle: context.textTheme.labelLarge!
-                  .copyWith(color: ColorConst.thirdColor, fontSize: 15),
+                  .copyWith(color: AppColor.thirdColor, fontSize: 15),
               contentPadding: EdgeInsets.only(
                 top: 10.h,
                 bottom: 10.h,
@@ -52,19 +45,19 @@ class FormFieldInformation extends StatelessWidget {
               border: UnderlineInputBorder(
                 borderSide: BorderSide(
                   width: .5.w,
-                  color: ColorConst.thirdColor.withOpacity(.5),
+                  color: AppColor.thirdColor.withOpacity(.5),
                 ),
               ),
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                   width: .5.w,
-                  color: ColorConst.thirdColor.withOpacity(.5),
+                  color: AppColor.thirdColor.withOpacity(.5),
                 ),
               ),
               focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
                   width: .5.w,
-                  color: ColorConst.thirdColor.withOpacity(.5),
+                  color: AppColor.thirdColor.withOpacity(.5),
                 ),
               ),
               prefixIcon: number
@@ -84,14 +77,14 @@ class FormFieldInformation extends StatelessWidget {
                   : null,
               suffixIcon: (number || mapIcon)
                   ? Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: SvgPicture.asset(
-                      number
-                          ? IconConst.fromFieldImagePasswordRecovery
-                          : IconConst.imageMovingIn,
-                      fit: BoxFit.scaleDown,
-                    ),
-                  )
+                      padding: const EdgeInsets.all(10),
+                      child: SvgPicture.asset(
+                        number
+                            ? AppIcon.fromFieldImagePasswordRecovery
+                            : AppIcon.imageMovingIn,
+                        fit: BoxFit.scaleDown,
+                      ),
+                    )
                   : Container(width: 0),
             ),
           ),

@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/core/constant/color_const.dart';
+import 'package:ecommerce_store/core/constants/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -27,7 +27,7 @@ class ProductsList extends StatelessWidget {
           // ),
           itemBuilder: (BuildContext context, int index) {
             return Card(
-              color: ColorConst.nineColor,
+              color: AppColor.nineColor,
               elevation: .2,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),

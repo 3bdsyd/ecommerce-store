@@ -1,16 +1,9 @@
 import 'dart:ui';
 
 import 'package:ecommerce_store/controller/home_controller.dart';
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 import '../../../core/class/platform.dart';
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
-import '../../../data/datasource/static/static.dart';
 import '../../screen/chat_store.dart';
 import 'exit_confirmation.dart';
 
@@ -40,12 +33,12 @@ class OrientationList extends GetView<HomeControllerImp> {
                     movingToScreen(index);
                   },
                   child: SvgPicture.asset(
-                    IconConst.imageMovingIn,
+                    AppIcon.imageMovingIn,
                   ),
                 ),
               ),
               Divider(
-                color: ColorConst.thirdColor.withOpacity(.5),
+                color: AppColor.thirdColor.withOpacity(.5),
               )
             ],
           );
@@ -102,7 +95,7 @@ class OrientationList extends GetView<HomeControllerImp> {
             Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: ColorConst.thirdColor,
+                  color: AppColor.thirdColor,
                   width: 2,
                 ),
                 borderRadius: BorderRadius.circular(20),

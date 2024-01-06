@@ -1,10 +1,8 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
-import 'package:flutter/material.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:get/get.dart';
 
 import '../../../core/class/platform.dart';
-import '../../../router/routes.dart';
 import 'card_category.dart';
 
 class GetViewCategory extends GetView<HomeControllerImp> {
@@ -39,7 +37,7 @@ class GetViewCategory extends GetView<HomeControllerImp> {
                     onTap: () {
                       controller.viewDetailsProduct(
                           controller.myCategoryList[index].id);
-                      Get.toNamed(ScreenNames.detailsProduct);
+                      Get.toNamed(AppNameScreen.detailsProduct);
                     },
                     child: CardCategory(
                       index: index,

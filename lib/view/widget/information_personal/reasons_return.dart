@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ReasonsReturn extends StatelessWidget {
   const ReasonsReturn({super.key});
@@ -18,22 +11,22 @@ class ReasonsReturn extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 5.w),
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: ColorConst.primaryColor.withOpacity(.1),
+        color: AppColor.primaryColor.withOpacity(.1),
         borderRadius: BorderRadius.circular(5),
-        border: Border.all(color: ColorConst.primaryColor, width: 1),
+        border: Border.all(color: AppColor.primaryColor, width: 1),
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton(
-          dropdownColor: ColorConst.secondaryColor,
+          dropdownColor: AppColor.secondaryColor,
           style: context.textTheme.labelMedium,
-          focusColor: ColorConst.thirdColor,
+          focusColor: AppColor.thirdColor,
           isExpanded: true,
           isDense: true,
           enableFeedback: true,
           value: '1',
           borderRadius: BorderRadius.circular(10),
           icon: SvgPicture.asset(
-            IconConst.imagesDropdown,
+            AppIcon.imagesDropdown,
             height: 8,
           ),
           items: const [

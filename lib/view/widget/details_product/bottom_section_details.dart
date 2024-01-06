@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 import 'button_add_product.dart';
 import 'description_product.dart';
 import 'details_colors_product.dart';
@@ -29,7 +29,7 @@ class BottomSectionDetails extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.w),
-            child:  const Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 DetailsColorsProduct(),
@@ -47,7 +47,7 @@ class BottomSectionDetails extends StatelessWidget {
           ),
           const DescriptionProduct(),
           Divider(
-            color: ColorConst.thirdColor,
+            color: AppColor.thirdColor,
             height: 20.h,
           ),
           const StoreGuarantee(),

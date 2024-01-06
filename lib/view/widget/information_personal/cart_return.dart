@@ -6,7 +6,7 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
 import '../../../core/class/platform.dart';
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 import 'comments_return.dart';
 import 'note_return.dart';
 
@@ -41,7 +41,7 @@ class CartReturn extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     elevation: .2,
-                    color: ColorConst.nineColor,
+                    color: AppColor.nineColor,
                     child: Padding(
                       padding: EdgeInsets.symmetric(
                         horizontal: 10.w,

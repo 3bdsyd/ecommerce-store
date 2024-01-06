@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ButtonOrderFailed extends StatelessWidget {
   const ButtonOrderFailed({super.key, required this.reviewButton});
@@ -26,7 +19,7 @@ class ButtonOrderFailed extends StatelessWidget {
         },
         style: ElevatedButton.styleFrom(
           backgroundColor:
-              reviewButton ? ColorConst.primaryColor : ColorConst.thirdColor,
+              reviewButton ? AppColor.primaryColor : AppColor.thirdColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -36,7 +29,7 @@ class ButtonOrderFailed extends StatelessWidget {
           children: [
             reviewButton
                 ? SvgPicture.asset(
-                    IconConst.imagesLongLeft,
+                    AppIcon.imagesLongLeft,
                     width: 28.w,
                     fit: BoxFit.scaleDown,
                   )

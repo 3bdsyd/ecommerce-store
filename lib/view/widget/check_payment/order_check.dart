@@ -1,9 +1,9 @@
-import 'package:ecommerce_store/core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 import 'button_state_order.dart';
 
 class OrderCheck extends StatelessWidget {
@@ -77,7 +77,7 @@ class OrderCheck extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
                         border: Border.fromBorderSide(
-                          BorderSide(color: ColorConst.primaryColor),
+                          BorderSide(color: AppColor.primaryColor),
                         ),
                       ),
                       child: Text(
@@ -89,7 +89,7 @@ class OrderCheck extends StatelessWidget {
                   ],
                 ),
                 Divider(
-                  color: ColorConst.thirdColor,
+                  color: AppColor.thirdColor,
                   thickness: .5,
                   height: 20.h,
                 ),
@@ -98,7 +98,7 @@ class OrderCheck extends StatelessWidget {
                     ClipRRect(
                         borderRadius: BorderRadius.circular(10),
                         child: Image.asset(
-                          ImageConst.imageCategoryThree,
+                          AppImage.imageCategoryThree,
                           width: 100,
                           height: 110,
                           fit: BoxFit.fill,
@@ -109,7 +109,7 @@ class OrderCheck extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        ImageConst.imageCategoryOne,
+                        AppImage.imageCategoryOne,
                         width: 100,
                         height: 110,
                         fit: BoxFit.fill,
@@ -118,7 +118,7 @@ class OrderCheck extends StatelessWidget {
                   ],
                 ),
                 Divider(
-                  color: ColorConst.thirdColor.withOpacity(.2),
+                  color: AppColor.thirdColor.withOpacity(.2),
                   height: 30.h,
                   thickness: 2,
                 ),
@@ -129,8 +129,8 @@ class OrderCheck extends StatelessWidget {
                       flex: 2,
                       child: Text(
                         'SubTotal ( 2 product)',
-                        style: context.textTheme.bodySmall!.copyWith(
-                            fontSize: 15, color: ColorConst.thirdColor),
+                        style: context.textTheme.bodySmall!
+                            .copyWith(fontSize: 15, color: AppColor.thirdColor),
                       ),
                     ),
                     const Spacer(),
@@ -138,7 +138,7 @@ class OrderCheck extends StatelessWidget {
                       child: Text(
                         '\$ 537.08',
                         style: context.textTheme.bodySmall!.copyWith(
-                          color: ColorConst.thirdColor,
+                          color: AppColor.thirdColor,
                           fontSize: 15,
                         ),
                       ),
@@ -155,8 +155,8 @@ class OrderCheck extends StatelessWidget {
                       flex: 2,
                       child: Text(
                         'Delivery fee',
-                        style: context.textTheme.bodySmall!.copyWith(
-                            fontSize: 15, color: ColorConst.thirdColor),
+                        style: context.textTheme.bodySmall!
+                            .copyWith(fontSize: 15, color: AppColor.thirdColor),
                       ),
                     ),
                     const Spacer(),
@@ -164,7 +164,7 @@ class OrderCheck extends StatelessWidget {
                       child: Text(
                         '\$ 10.00',
                         style: context.textTheme.bodySmall!.copyWith(
-                          color: ColorConst.thirdColor,
+                          color: AppColor.thirdColor,
                           fontSize: 15,
                         ),
                       ),

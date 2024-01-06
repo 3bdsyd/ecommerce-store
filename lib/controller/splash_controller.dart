@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 abstract class SplashController extends GetxController {
   // Go to the start screen of the application
@@ -7,18 +7,19 @@ abstract class SplashController extends GetxController {
 
 class SplashControllerImp extends SplashController {
   @override
-  void onInit() {
-    startedScreen();
-    super.onInit();
+  void startedScreen() {
+    Timer(
+      const Duration(seconds: 2),
+      () => Get.offNamed(AppNameScreen.onBoardingScreen),
+    );
+    update();
   }
 
 //----------------------------------------------------------------
 
   @override
-  void startedScreen() {
-    Timer(const Duration(seconds: 2), () {
-      Get.offAllNamed(ScreenNames.onBoardingScreen);
-    });
-    update();
+  void onInit() {
+    startedScreen();
+    super.onInit();
   }
 }

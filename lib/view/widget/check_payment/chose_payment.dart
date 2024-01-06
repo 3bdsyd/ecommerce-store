@@ -1,12 +1,6 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
+import 'package:ecommerce_store/core/constants/app_image.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
 import 'from_field_chose_payment.dart';
 import 'list_text_moving.dart';
 
@@ -28,7 +22,7 @@ class ChosePayment extends GetView<HomeControllerImp> {
               Text(
                 'Id  100',
                 style: context.textTheme.labelLarge!
-                    .copyWith(color: ColorConst.thirdColor),
+                    .copyWith(color: AppColor.thirdColor),
               ),
               const SizedBox(
                 width: 0,
@@ -47,13 +41,13 @@ class ChosePayment extends GetView<HomeControllerImp> {
                 Container(
                   width: double.infinity,
                   height: 30.h,
-                  color: ColorConst.thirdColor,
+                  color: AppColor.thirdColor,
                   child: Row(
                     children: [
                       SizedBox(
                         width: 10.w,
                       ),
-                      SvgPicture.asset(IconConst.imagesLook,
+                      SvgPicture.asset(AppIcon.imagesLook,
                           width: 15.w, fit: BoxFit.scaleDown),
                       SizedBox(
                         width: 10.w,
@@ -61,7 +55,7 @@ class ChosePayment extends GetView<HomeControllerImp> {
                       Text(
                         'This is a secure 128-bit SSL Encrypted payment. You\'re safe',
                         style: context.textTheme.labelSmall!.copyWith(
-                          color: ColorConst.whiteColor,
+                          color: AppColor.whiteColor,
                           fontSize: 9,
                         ),
                       ),
@@ -74,25 +68,25 @@ class ChosePayment extends GetView<HomeControllerImp> {
                 Row(
                   children: [
                     Image.asset(
-                      ImageConst.imagesCardOne,
+                      AppImage.imagesCardOne,
                     ),
                     SizedBox(
                       width: 4.w,
                     ),
                     Image.asset(
-                      ImageConst.imagesCardTow,
+                      AppImage.imagesCardTow,
                     ),
                     SizedBox(
                       width: 12.w,
                     ),
                     Image.asset(
-                      ImageConst.imagesCardThree,
+                      AppImage.imagesCardThree,
                     ),
                     SizedBox(
                       width: 12.w,
                     ),
                     Image.asset(
-                      ImageConst.imagesCardFour,
+                      AppImage.imagesCardFour,
                     ),
                   ],
                 ),
@@ -143,7 +137,7 @@ class ChosePayment extends GetView<HomeControllerImp> {
                   alignment: Alignment.center,
                   width: double.infinity,
                   height: 35.h,
-                  color: ColorConst.thirdColor,
+                  color: AppColor.thirdColor,
                   child: GestureDetector(
                     onTap: () {
                       // controller.nextPagePayment();
@@ -151,7 +145,7 @@ class ChosePayment extends GetView<HomeControllerImp> {
                     child: Text(
                       'ORDER CHECK',
                       style: context.textTheme.labelSmall!.copyWith(
-                        color: ColorConst.whiteColor,
+                        color: AppColor.whiteColor,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
@@ -177,7 +171,7 @@ class ChosePayment extends GetView<HomeControllerImp> {
           Text(
             'Please attachment your payment',
             style: context.textTheme.titleLarge!.copyWith(
-              color: ColorConst.thirdColor,
+              color: AppColor.thirdColor,
               fontWeight: FontWeight.w400,
               fontSize: 16,
             ),
@@ -189,15 +183,15 @@ class ChosePayment extends GetView<HomeControllerImp> {
             height: 100.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: ColorConst.nineColor,
+              color: AppColor.nineColor,
             ),
             child: Row(
               children: [
-                SvgPicture.asset(IconConst.imagesImageIcon),
+                SvgPicture.asset(AppIcon.imagesImageIcon),
                 // ignore: prefer_const_constructors
                 Spacer(),
                 SvgPicture.asset(
-                  IconConst.imagesVoctorChat,
+                  AppIcon.imagesVoctorChat,
                   width: 25,
                   height: 25,
                 ),

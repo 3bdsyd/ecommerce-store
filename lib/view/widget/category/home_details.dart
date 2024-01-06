@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 import 'button_gender_widget.dart';
 import 'chose_color_widget.dart';
@@ -56,7 +56,7 @@ class HomeDetails extends GetView<HomeControllerImp> {
                   const SliderPriceWidget(),
                   const ButtonMaxMinPrice(),
                   Divider(
-                    color: ColorConst.secondaryColor,
+                    color: AppColor.secondaryColor,
                     height: 50.h,
                   ),
                   const ChoseColorWidget(),

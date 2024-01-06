@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class TypeItems extends GetView<HomeControllerImp> {
   const TypeItems({super.key});
@@ -44,23 +44,23 @@ class TypeItems extends GetView<HomeControllerImp> {
           boxShadow: controller.currentItem.value == index
               ? [
                   BoxShadow(
-                    color: ColorConst.secondaryColor.withOpacity(.2),
+                    color: AppColor.secondaryColor.withOpacity(.2),
                     blurRadius: 5,
                     spreadRadius: 5,
                   ),
                 ]
               : [const BoxShadow(color: Colors.transparent)],
           color: controller.currentItem.value == index
-              ? ColorConst.secondaryColor
+              ? AppColor.secondaryColor
               : Colors.transparent,
-          border: Border.all(color: ColorConst.secondaryColor),
+          border: Border.all(color: AppColor.secondaryColor),
           borderRadius: BorderRadius.circular(20)),
       child: Text(
         nameCategoryList[index].nameCategory,
         style: context.textTheme.labelLarge!.copyWith(
           color: controller.currentItem.value == index
               ? Colors.white
-              : ColorConst.secondaryColor,
+              : AppColor.secondaryColor,
         ),
       ),
     );

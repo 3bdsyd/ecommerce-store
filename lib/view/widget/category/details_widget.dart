@@ -1,13 +1,6 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import 'package:ecommerce_store/view/widget/category/home_details.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
 
 class DetailsWidget extends GetView<HomeControllerImp> {
   const DetailsWidget({super.key});
@@ -24,15 +17,15 @@ class DetailsWidget extends GetView<HomeControllerImp> {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: ColorConst.thirdColor.withOpacity(.8),
+                color: AppColor.thirdColor.withOpacity(.8),
                 blurRadius: 10,
               ),
             ],
-            color: ColorConst.thirdColor,
+            color: AppColor.thirdColor,
             borderRadius: BorderRadius.circular(18),
           ),
           child: SvgPicture.asset(
-            IconConst.imageVectorEdit,
+            AppIcon.imageVectorEdit,
             fit: BoxFit.scaleDown,
           ),
         ),
@@ -51,7 +44,7 @@ class DetailsWidget extends GetView<HomeControllerImp> {
           children: [
             Expanded(
               child: Container(
-                color: ColorConst.secondaryColor.withOpacity(.2),
+                color: AppColor.secondaryColor.withOpacity(.2),
               ),
             ),
             Expanded(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class LeftCartOrder extends StatelessWidget {
   const LeftCartOrder({super.key});
@@ -22,7 +22,7 @@ class LeftCartOrder extends StatelessWidget {
             'Ranim Omar\nDamascus-Alkaid-srt.x\n, 28294\n+963 997555668',
             overflow: TextOverflow.ellipsis,
             style: context.textTheme.bodySmall!.copyWith(
-              color: ColorConst.thirdColor,
+              color: AppColor.thirdColor,
             ),
           ),
         ],

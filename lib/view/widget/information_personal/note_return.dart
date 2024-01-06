@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class NoteReturn extends StatelessWidget {
   const NoteReturn({super.key});
@@ -18,7 +18,7 @@ class NoteReturn extends StatelessWidget {
               text: 'Note:  ',
               style: context.textTheme.labelSmall!.copyWith(
                 fontSize: 15,
-                color: ColorConst.primaryColor,
+                color: AppColor.primaryColor,
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -26,7 +26,7 @@ class NoteReturn extends StatelessWidget {
               text:
                   'We aren’t able to offer policy exception or special handling in response to comments entered on this page.',
               style: context.textTheme.bodySmall!.copyWith(
-                color: ColorConst.thirdColor,
+                color: AppColor.thirdColor,
               ),
             ),
           ],

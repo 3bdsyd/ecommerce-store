@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/core/constant/color_const.dart';
+import 'package:ecommerce_store/core/constants/app_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -39,7 +39,7 @@ class CategoryHome extends StatelessWidget {
               'See more',
               style: context.textTheme.labelSmall!.copyWith(
                 fontWeight: FontWeight.w500,
-                color: ColorConst.thirdColor,
+                color: AppColor.thirdColor,
               ),
             ),
           ),

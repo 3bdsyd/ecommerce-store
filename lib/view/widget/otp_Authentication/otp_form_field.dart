@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class OTPFormField extends StatelessWidget {
   const OTPFormField({super.key});
@@ -30,9 +30,9 @@ class OTPFormField extends StatelessWidget {
                 ],
                 autofocus: true,
                 cursorWidth: 1,
-                cursorColor: ColorConst.thirdColor,
+                cursorColor: AppColor.thirdColor,
                 style: context.textTheme.labelLarge!.copyWith(
-                  color: ColorConst.thirdColor,
+                  color: AppColor.thirdColor,
                   fontFamily: 'SF Pro Display',
                   fontWeight: FontWeight.w700,
                   fontSize: 18,
@@ -44,19 +44,19 @@ class OTPFormField extends StatelessWidget {
                   border: UnderlineInputBorder(
                     borderSide: BorderSide(
                       width: 2.w,
-                      color: ColorConst.thirdColor.withOpacity(.3),
+                      color: AppColor.thirdColor.withOpacity(.3),
                     ),
                   ),
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       width: 2.w,
-                      color: ColorConst.thirdColor.withOpacity(.3),
+                      color: AppColor.thirdColor.withOpacity(.3),
                     ),
                   ),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       width: 2.w,
-                      color: ColorConst.thirdColor.withOpacity(.3),
+                      color: AppColor.thirdColor.withOpacity(.3),
                     ),
                   ),
                 ),

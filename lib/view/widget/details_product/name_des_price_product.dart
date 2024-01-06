@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class NameDesPriceProduct extends GetView<HomeControllerImp> {
   const NameDesPriceProduct({super.key});
@@ -28,7 +28,7 @@ class NameDesPriceProduct extends GetView<HomeControllerImp> {
               controller.myDetailsProduct.discretionCategory,
               overflow: TextOverflow.ellipsis,
               style: context.textTheme.bodySmall!.copyWith(
-                color: ColorConst.thirdColor,
+                color: AppColor.thirdColor,
                 fontSize: 14,
               ),
             ),
@@ -39,7 +39,7 @@ class NameDesPriceProduct extends GetView<HomeControllerImp> {
             Text(
               '\$ ${controller.myDetailsProduct.priceCategory}',
               style: context.textTheme.labelSmall!.copyWith(
-                color: ColorConst.secondaryColor,
+                color: AppColor.secondaryColor,
                 fontSize: 18,
               ),
             ),

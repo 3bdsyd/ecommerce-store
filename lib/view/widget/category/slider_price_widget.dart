@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class SliderPriceWidget extends GetView<HomeControllerImp> {
   const SliderPriceWidget({super.key});
@@ -19,8 +19,8 @@ class SliderPriceWidget extends GetView<HomeControllerImp> {
               trackHeight: 1,
             ),
             child: RangeSlider(
-              inactiveColor: ColorConst.secondaryColor.withOpacity(.5),
-              activeColor: ColorConst.thirdColor,
+              inactiveColor: AppColor.secondaryColor.withOpacity(.5),
+              activeColor: AppColor.thirdColor,
               values: controller.currentRangeValues.value,
               max: 2400,
               divisions: 10,

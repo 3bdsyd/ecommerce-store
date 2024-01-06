@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:readmore/readmore.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class DescriptionProduct extends StatelessWidget {
   const DescriptionProduct({super.key});
@@ -19,7 +19,7 @@ class DescriptionProduct extends StatelessWidget {
         '- Nyaman dipakai',
         trimLines: 3,
         style: context.textTheme.labelMedium,
-        colorClickableText: ColorConst.primaryColor,
+        colorClickableText: AppColor.primaryColor,
         trimMode: TrimMode.Line,
         trimCollapsedText: ' Read more',
         trimExpandedText: ' ...Read less',

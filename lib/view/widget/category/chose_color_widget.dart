@@ -1,11 +1,5 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/image_const.dart';
 
 class ChoseColorWidget extends GetView<HomeControllerImp> {
   const ChoseColorWidget({super.key});
@@ -32,7 +26,7 @@ class ChoseColorWidget extends GetView<HomeControllerImp> {
                   margin: EdgeInsets.symmetric(horizontal: 2.h),
                   child: index == controller.currentColor.value
                       ? SvgPicture.asset(
-                          IconConst.fromFieldImagePasswordRecovery,
+                          AppIcon.fromFieldImagePasswordRecovery,
                         )
                       : Container(
                           width: 0,

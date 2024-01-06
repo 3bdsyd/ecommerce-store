@@ -1,9 +1,10 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class CustomButton extends StatelessWidget {
   final Function() onPressed;
   final Widget widget;
   final Color backgroundColor;
+  
   const CustomButton({
     super.key,
     required this.onPressed,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../core/constant/color_const.dart';
+import '../../core/constants/app_color.dart';
 import '../widget/orders_history/title_back.dart';
 
 class AboutStore extends StatelessWidget {
@@ -33,7 +33,7 @@ class AboutStore extends StatelessWidget {
             'MARI BOSA is trying to become a fashion destination in Southeast Asia.',
             textAlign: TextAlign.center,
             style: context.textTheme.labelLarge!.copyWith(
-              color: ColorConst.thirdColor,
+              color: AppColor.thirdColor,
             ),
           )
         ],

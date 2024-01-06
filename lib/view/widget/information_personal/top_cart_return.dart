@@ -1,9 +1,9 @@
+import 'package:ecommerce_store/core/constants/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import '../../../core/constants/app_color.dart';
 import 'button_return_back.dart';
 
 class TopCartReturn extends StatelessWidget {
@@ -18,7 +18,7 @@ class TopCartReturn extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
-              ImageConst.imageCategoryFive,
+              AppImage.imageCategoryFive,
               height: 100.h,
               fit: BoxFit.fill,
             ),
@@ -43,7 +43,7 @@ class TopCartReturn extends StatelessWidget {
               Text(
                 'Antelope',
                 style: context.textTheme.bodySmall!.copyWith(
-                  color: ColorConst.thirdColor,
+                  color: AppColor.thirdColor,
                   fontSize: 15,
                 ),
                 overflow: TextOverflow.ellipsis,
@@ -54,7 +54,7 @@ class TopCartReturn extends StatelessWidget {
               Text(
                 'Shipped: Aug 19,2023',
                 style: context.textTheme.bodySmall!.copyWith(
-                  color: ColorConst.thirdColor,
+                  color: AppColor.thirdColor,
                   fontSize: 15,
                 ),
               ),
@@ -64,7 +64,7 @@ class TopCartReturn extends StatelessWidget {
               Text(
                 'Quantity to return: 1',
                 style: context.textTheme.bodySmall!.copyWith(
-                  color: ColorConst.thirdColor,
+                  color: AppColor.thirdColor,
                   fontSize: 11,
                 ),
               ),

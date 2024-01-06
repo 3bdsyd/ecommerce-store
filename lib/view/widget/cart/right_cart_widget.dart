@@ -1,11 +1,5 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../controller/home_controller.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/controller/home_controller.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class RightCartWidget extends GetView<HomeControllerImp> {
   const RightCartWidget(this.index, {super.key});
@@ -24,7 +18,7 @@ final int index;
               );
             },
             child: SvgPicture.asset(
-              IconConst.imageDeletedIcon,
+              AppIcon.imageDeletedIcon,
               height: 20.h,
               width: 15.w,
             ),
@@ -38,7 +32,7 @@ final int index;
                       controller.myCategoryCart.keys.toList()[index].id);
                 },
                 child: SvgPicture.asset(
-                  IconConst.imageMinusIcon,
+                  AppIcon.imageMinusIcon,
                   height: 4.h,
                   width: 15.w,
                 ),
@@ -56,7 +50,7 @@ final int index;
                       controller.myCategoryCart.keys.toList()[index].id);
                 },
                 child: SvgPicture.asset(
-                  IconConst.imagePlusIcon,
+                  AppIcon.imagePlusIcon,
                   height: 11.h,
                   width: 15.w,
                 ),

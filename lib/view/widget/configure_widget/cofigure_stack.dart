@@ -1,8 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 // ignore: must_be_immutable
 class ConfigureStack extends StatelessWidget {
@@ -13,13 +9,13 @@ class ConfigureStack extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
-        SvgPicture.asset(IconConst.configureImageEllipseOne),
-        SvgPicture.asset(IconConst.configureImageEllipseTow),
-        SvgPicture.asset(IconConst.configureImageEllipseThree),
+        SvgPicture.asset(AppIcon.configureImageEllipseOne),
+        SvgPicture.asset(AppIcon.configureImageEllipseTow),
+        SvgPicture.asset(AppIcon.configureImageEllipseThree),
         SvgPicture.asset(
           filedScreen ?? false
-              ? IconConst.imagesShape
-              : IconConst.configureImageVector,
+              ? AppIcon.imagesShape
+              : AppIcon.configureImageVector,
         ),
       ],
     );

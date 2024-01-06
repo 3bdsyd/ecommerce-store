@@ -1,10 +1,11 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import 'package:ecommerce_store/router/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class ButtonAddProduct extends GetView<HomeControllerImp> {
   const ButtonAddProduct({super.key});
@@ -18,11 +19,11 @@ class ButtonAddProduct extends GetView<HomeControllerImp> {
         onPressed: () {
           controller.addItemsToCart(controller.myDetailsProduct.id);
           controller.changeStatePaymentProduct(true);
-          Get.toNamed(ScreenNames.home);
+          Get.toNamed(AppNameScreen.home);
           controller.changeCurrentPage(2);
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: ColorConst.primaryColor,
+          backgroundColor: AppColor.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

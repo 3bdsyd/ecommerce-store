@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class CostCalculation extends StatelessWidget {
   const CostCalculation({
@@ -24,7 +24,7 @@ class CostCalculation extends StatelessWidget {
             style: isTotal
                 ? context.textTheme.bodyMedium!.copyWith(fontSize: 18)
                 : context.textTheme.bodySmall!.copyWith(
-                    color: ColorConst.thirdColor,
+                    color: AppColor.thirdColor,
                     fontSize: 15,
                   ),
           ),
@@ -36,7 +36,7 @@ class CostCalculation extends StatelessWidget {
             style: isTotal
                 ? context.textTheme.bodyMedium!.copyWith(fontSize: 18)
                 : context.textTheme.bodySmall!.copyWith(
-                    color: ColorConst.thirdColor,
+                    color: AppColor.thirdColor,
                     fontSize: 15,
                   ),
           ),

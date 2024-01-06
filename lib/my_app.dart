@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeApp.themeData,
-          initialRoute: ScreenNames.splashScreen,
+          theme: AppTheme.themeData,
+          initialRoute: AppNameScreen.splashScreen,
           getPages: Routes.getPages,
           initialBinding: CrudBinding(),
         );

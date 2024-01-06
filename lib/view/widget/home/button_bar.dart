@@ -1,11 +1,5 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ButtonNavBar extends GetView<HomeControllerImp> {
   const ButtonNavBar({super.key});
@@ -16,7 +10,7 @@ class ButtonNavBar extends GetView<HomeControllerImp> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
         border: Border.all(
-          color: ColorConst.primaryColor,
+          color: AppColor.primaryColor,
           width: 1,
         ),
       ),
@@ -28,10 +22,10 @@ class ButtonNavBar extends GetView<HomeControllerImp> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           items: <BottomNavigationBarItem>[
-            buttonItems(image: IconConst.imageVectorHome),
-            buttonItems(image: IconConst.imageVectorLove),
-            buttonItems(image: IconConst.imageVectorCart),
-            buttonItems(image: IconConst.imageVectorPerson),
+            buttonItems(image: AppIcon.imageVectorHome),
+            buttonItems(image: AppIcon.imageVectorLove),
+            buttonItems(image: AppIcon.imageVectorCart),
+            buttonItems(image: AppIcon.imageVectorPerson),
           ],
           currentIndex: controller.currentPage.value < 4
               ? controller.currentPage.value
@@ -55,14 +49,14 @@ class ButtonNavBar extends GetView<HomeControllerImp> {
       icon: SvgPicture.asset(
         image,
         colorFilter: ColorFilter.mode(
-          ColorConst.thirdColor,
+          AppColor.thirdColor,
           BlendMode.srcIn,
         ),
       ),
       activeIcon: SvgPicture.asset(
         image,
         colorFilter: ColorFilter.mode(
-          ColorConst.primaryColor,
+          AppColor.primaryColor,
           BlendMode.srcIn,
         ),
       ),

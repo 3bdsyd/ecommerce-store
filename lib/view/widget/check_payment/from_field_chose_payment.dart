@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class FromFieldChosePayment extends StatelessWidget {
   const FromFieldChosePayment(
@@ -16,12 +9,12 @@ class FromFieldChosePayment extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       cursorWidth: 1,
-      cursorColor: ColorConst.thirdColor,
+      cursorColor: AppColor.thirdColor,
       style: context.textTheme.labelSmall,
       decoration: InputDecoration(
         hintText: hint,
         hintStyle: context.textTheme.labelLarge!
-            .copyWith(color: ColorConst.thirdColor, fontSize: 15),
+            .copyWith(color: AppColor.thirdColor, fontSize: 15),
         contentPadding: EdgeInsets.only(
           top: 10.h,
           bottom: 1.h,
@@ -30,17 +23,17 @@ class FromFieldChosePayment extends StatelessWidget {
         ),
         border: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: ColorConst.thirdColor,
+            color: AppColor.thirdColor,
           ),
         ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: ColorConst.thirdColor,
+            color: AppColor.thirdColor,
           ),
         ),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: ColorConst.thirdColor,
+            color: AppColor.thirdColor,
           ),
         ),
         suffixIcon: date
@@ -53,9 +46,9 @@ class FromFieldChosePayment extends StatelessWidget {
                     Text(
                       hint,
                       style: context.textTheme.labelLarge!
-                          .copyWith(color: ColorConst.thirdColor, fontSize: 15),
+                          .copyWith(color: AppColor.thirdColor, fontSize: 15),
                     ),
-                    SvgPicture.asset(IconConst.imagesArrowLeftS),
+                    SvgPicture.asset(AppIcon.imagesArrowLeftS),
                   ],
                 ),
               )

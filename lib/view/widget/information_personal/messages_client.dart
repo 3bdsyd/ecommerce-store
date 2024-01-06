@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 import '../../../data/datasource/static/static.dart';
 
 class MessagesClient extends StatelessWidget {
@@ -25,7 +25,7 @@ class MessagesClient extends StatelessWidget {
                   vertical: 10.h,
                 ),
                 decoration: BoxDecoration(
-                  color: ColorConst.twelfthColor,
+                  color: AppColor.twelfthColor,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),

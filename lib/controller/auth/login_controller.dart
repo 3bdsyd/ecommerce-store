@@ -1,10 +1,5 @@
-import 'package:ecommerce_store/core/class/status_request.dart';
-import 'package:ecommerce_store/core/fuctions/handling_data_controller.dart';
-import 'package:ecommerce_store/core/services/my_services.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import 'package:ecommerce_store/data/datasource/reomte/signin_remote.dart';
-import 'package:ecommerce_store/router/routes.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 abstract class SignInController extends GetxController {
   void getData();
@@ -59,7 +54,7 @@ class SignInControllerImp extends SignInController {
       if (StatusRequest.success == statusRequest) {
         if (response['code'] == 0) {
           data.addAll(response['data']);
-          Get.offNamed(ScreenNames.otpAuth);
+          Get.offNamed(AppNameScreen.otpAuth);
           // print(data['Token']);
           myServicesController.getBox.write('Token', data['Token']);
           // print(myServicesController.getBox.read('Token'));

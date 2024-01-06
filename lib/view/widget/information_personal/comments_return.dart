@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class CommentsReturn extends StatelessWidget {
   const CommentsReturn({super.key});
@@ -13,7 +13,7 @@ class CommentsReturn extends StatelessWidget {
       height: 100.h,
       width: 220.w,
       child: TextField(
-        cursorColor: ColorConst.thirdColor,
+        cursorColor: AppColor.thirdColor,
         textAlignVertical: TextAlignVertical.top,
         maxLines: null,
         expands: true,
@@ -27,19 +27,19 @@ class CommentsReturn extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide(
-              color: ColorConst.primaryColor,
+              color: AppColor.primaryColor,
             ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide(
-              color: ColorConst.primaryColor,
+              color: AppColor.primaryColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
             borderSide: BorderSide(
-              color: ColorConst.primaryColor,
+              color: AppColor.primaryColor,
             ),
           ),
         ),

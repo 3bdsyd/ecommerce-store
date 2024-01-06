@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class EndDialogApply extends StatelessWidget {
   const EndDialogApply({super.key});
@@ -21,7 +14,7 @@ class EndDialogApply extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                backgroundColor: ColorConst.primaryColor,
+                backgroundColor: AppColor.primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -35,7 +28,7 @@ class EndDialogApply extends StatelessWidget {
                     style: context.textTheme.labelLarge!.copyWith(fontSize: 18),
                   ),
                   SvgPicture.asset(
-                    IconConst.onBoardingStart,
+                    AppIcon.onBoardingStart,
                     width: 30.w,
                     height: 20.h,
                     fit: BoxFit.scaleDown,
@@ -54,7 +47,7 @@ class EndDialogApply extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: ColorConst.secondaryColor,
+                  backgroundColor: AppColor.secondaryColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),

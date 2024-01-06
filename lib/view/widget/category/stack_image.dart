@@ -1,10 +1,10 @@
-import 'package:ecommerce_store/core/constant/color_const.dart';
+import 'package:ecommerce_store/core/constants/app_color.dart';
+import 'package:ecommerce_store/core/constants/app_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../core/class/platform.dart';
-import '../../../core/constant/image_const.dart';
 
 class StackImage extends StatelessWidget {
   const StackImage({super.key});
@@ -17,7 +17,7 @@ class StackImage extends StatelessWidget {
         Container(
           height: 150.h,
           width: sizeWidth,
-          color: ColorConst.secondaryColor,
+          color: AppColor.secondaryColor,
         ),
         Align(
           alignment: Alignment.centerRight,
@@ -26,7 +26,7 @@ class StackImage extends StatelessWidget {
             child: Container(
               width: sizeWidth,
               height: 150.h,
-              color: ColorConst.primaryColor,
+              color: AppColor.primaryColor,
             ),
           ),
         ),
@@ -36,7 +36,7 @@ class StackImage extends StatelessWidget {
           bottom: -13.h,
           left: -25.w,
           child: Image.asset(
-            ImageConst.imageRectangle189,
+            AppImage.imageRectangle189,
             fit: BoxFit.fill,
           ),
         ),
@@ -64,7 +64,7 @@ class StackImage extends StatelessWidget {
                     alignment: Alignment.center,
                     height: 28.h,
                     width: sizeWidth * .29,
-                    color: ColorConst.secondaryColor,
+                    color: AppColor.secondaryColor,
                     child: Text(
                       'Up to 30 %',
                       style: context.textTheme.labelLarge!
@@ -72,7 +72,7 @@ class StackImage extends StatelessWidget {
                     ),
                   ),
                   Image.asset(
-                    ImageConst.imageRectangle184,
+                    AppImage.imageRectangle184,
                     height: 50.h,
                     width: sizeWidth * .16,
                     fit: BoxFit.fill,

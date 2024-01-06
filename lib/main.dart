@@ -1,6 +1,6 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
-void main() async {
+Future<void> main() async {
   await initialServices();
   runApp(const MyApp());
 }

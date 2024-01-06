@@ -1,10 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ButtonBackConfigure extends StatelessWidget {
   const ButtonBackConfigure({super.key});
@@ -18,7 +12,7 @@ class ButtonBackConfigure extends StatelessWidget {
           Get.back();
         },
         child: SvgPicture.asset(
-          IconConst.buttonBack,
+          AppIcon.buttonBack,
           fit: BoxFit.scaleDown,
           width: 25.w,
           height: 25.w,

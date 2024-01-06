@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class CustomVertical extends StatelessWidget {
   final double height;

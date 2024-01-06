@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ButtonReturnBackChat extends StatelessWidget {
   const ButtonReturnBackChat({super.key});
@@ -21,7 +14,7 @@ class ButtonReturnBackChat extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: ColorConst.secondaryColor,
+              color: AppColor.secondaryColor,
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -31,7 +24,7 @@ class ButtonReturnBackChat extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
-                      IconConst.imagesReturnIcon,
+                      AppIcon.imagesReturnIcon,
                     ),
                   ],
                 ),
@@ -41,7 +34,7 @@ class ButtonReturnBackChat extends StatelessWidget {
                 Text(
                   'Return back',
                   style: context.textTheme.labelSmall!.copyWith(
-                    color: ColorConst.whiteColor,
+                    color: AppColor.whiteColor,
                   ),
                 ),
               ],

@@ -4,7 +4,7 @@ import 'package:dartz/dartz.dart';
 import 'package:ecommerce_store/core/class/status_request.dart';
 import 'package:http/http.dart' as http;
 
-import '../fuctions/check_internet.dart';
+import '../functions/check_internet.dart';
 
 class Crud {
   Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data) async {

@@ -1,12 +1,5 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import 'details_category.dart';
 
 class CardCategory extends GetView<HomeControllerImp> {
@@ -17,7 +10,7 @@ class CardCategory extends GetView<HomeControllerImp> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: ColorConst.whiteColor,
+      color: AppColor.whiteColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -50,13 +43,13 @@ class CardCategory extends GetView<HomeControllerImp> {
                       child: Text(
                         '\$${isPageFavorite ? controller.myCategoriesFavorite[index].priceCategory : controller.myCategoryList[index].priceCategory}',
                         style: context.textTheme.labelSmall!.copyWith(
-                          color: ColorConst.secondaryColor,
+                          color: AppColor.secondaryColor,
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     SvgPicture.asset(
-                      IconConst.onBoardingStart,
+                      AppIcon.onBoardingStart,
                       width: 15.w,
                       height: 15.h,
                     ),
@@ -69,5 +62,4 @@ class CardCategory extends GetView<HomeControllerImp> {
       ),
     );
   }
-
 }

@@ -2,7 +2,7 @@ import 'package:ecommerce_store/data/model/test_model.dart';
 import 'package:get/get.dart';
 
 import '../core/class/status_request.dart';
-import '../core/fuctions/handling_data_controller.dart';
+import '../core/functions/handling_data.dart';
 import '../data/datasource/reomte/test_data.dart';
 
 class TestController extends GetxController {

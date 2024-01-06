@@ -1,13 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
-import '../../../router/binding/home_binding.dart';
-import '../../screen/home.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ButtonDone extends StatelessWidget {
   const ButtonDone({super.key});
@@ -27,7 +18,7 @@ class ButtonDone extends StatelessWidget {
           );
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: ColorConst.primaryColor,
+          backgroundColor: AppColor.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -41,7 +32,7 @@ class ButtonDone extends StatelessWidget {
               style: context.textTheme.labelLarge,
             ),
             SvgPicture.asset(
-              IconConst.fromFieldImageLogIn,
+              AppIcon.fromFieldImageLogIn,
               width: 28.w,
               fit: BoxFit.scaleDown,
             ),

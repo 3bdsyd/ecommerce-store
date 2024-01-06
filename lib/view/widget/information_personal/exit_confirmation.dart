@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class ExitConfirmation extends StatelessWidget {
   const ExitConfirmation({super.key});
@@ -12,9 +12,9 @@ class ExitConfirmation extends StatelessWidget {
       child: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Divider(color: ColorConst.thirdColor),
+          Divider(color: AppColor.thirdColor),
           VerticalDivider(
-            color: ColorConst.thirdColor,
+            color: AppColor.thirdColor,
             indent: 8,
           ),
           Align(

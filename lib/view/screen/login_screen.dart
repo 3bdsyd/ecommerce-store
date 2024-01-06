@@ -1,18 +1,44 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import 'package:ecommerce_store/core/shared/custom_button.dart';
-
 
 class SignIn extends GetView<SignInControllerImp> {
   SignIn({super.key});
   final AuthControllerImp authController = Get.find();
   @override
   Widget build(BuildContext context) {
+    final GoogleSignIn _googleSignIn = GoogleSignIn();
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    Future<User?> signInWithGoogle() async {
+      try {
+        final GoogleSignInAccount? googleSignInAccount =
+            await _googleSignIn.signIn();
+        if (googleSignInAccount == null) {
+          return null;
+        }
+        if (googleSignInAccount != null) {
+          final GoogleSignInAuthentication googleSignInAuthentication =
+              await googleSignInAccount.authentication;
+          final AuthCredential credential = GoogleAuthProvider.credential(
+            accessToken: googleSignInAuthentication.accessToken,
+            idToken: googleSignInAuthentication.idToken,
+          );
+          final UserCredential authResult =
+              await _auth.signInWithCredential(credential);
+          final User? user = authResult.user;
+          return user;
+        }
+      } catch (error) {
+        print("Error signing in with Google: $error");
+        return null;
+      }
+    }
+
     return SafeArea(
       child: Scaffold(
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 12.w),
           child: GetBuilder<SignInControllerImp>(
-            builder: (_) => HandlingDataRequest(
+            builder: (_) => HandlingDataView(
               statusRequest: controller.statusRequest,
               widget: ListView(
                 children: [
@@ -36,31 +62,29 @@ class SignIn extends GetView<SignInControllerImp> {
                       key: controller.globalKeySignIn,
                       child: Column(
                         children: [
-                          FormFieldWidget(
-                            signUp: false,
+                          CustomFormField(
                             controller: controller.email,
                             hinText: 'Ranimomar',
-                            imagePrefix: IconConst.fromFieldImageOne,
+                            imagePrefix: AppIcon.fromFieldImageOne,
                             validator: (String value) {
                               return FieldsValidators.emailValidator(value);
                             },
-                            labelText: 'Username or Email',
+                            label: 'Ranimomar',
+                            // labelText: 'Username or Email',
                           ),
-                          FormFieldWidget(
-                            signUp: false,
+                          CustomFormField(
                             controller: controller.password,
                             hinText: '• • • • • • • •',
-                            imagePrefix: IconConst.fromFieldImageThree,
+                            imagePrefix: AppIcon.fromFieldImageThree,
                             validator: (String value) {
                               return FieldsValidators.passwordValidator(value);
                             },
-                            labelText: 'Password',
+                            label: 'Password',
+                            // labelText: 'Password',
                           ),
                           CustomButton(
-                            backgroundColor: ColorConst.primaryColor,
-                            onPressed: () {
-                              controller.getData();
-                            },
+                            backgroundColor: AppColor.primaryColor,
+                            onPressed: () {},
                             widget: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -68,11 +92,11 @@ class SignIn extends GetView<SignInControllerImp> {
                                 Text(
                                   'Login',
                                   style: context.textTheme.labelLarge!.copyWith(
-                                    color: ColorConst.whiteColor,
+                                    color: AppColor.whiteColor,
                                   ),
                                 ),
                                 SvgPicture.asset(
-                                  IconConst.fromFieldImageSignUp,
+                                  AppIcon.fromFieldImageSignUp,
                                   width: 28.w,
                                   fit: BoxFit.scaleDown,
                                 ),
@@ -88,7 +112,7 @@ class SignIn extends GetView<SignInControllerImp> {
                               ),
                               GestureDetector(
                                 onTap: () =>
-                                    Get.offNamed(ScreenNames.signUpScreen),
+                                    Get.offNamed(AppNameScreen.signUpScreen),
                                 child: Text(
                                   'Sign up',
                                   style:

@@ -1,11 +1,5 @@
-import 'package:ecommerce_store/core/constant/color_const.dart';
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:ecommerce_store/core/constant/image_const.dart';
-import 'package:ecommerce_store/view/widget/auth/button_back_title.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
+import 'package:ecommerce_store/core/constants/app_image.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class DetailsInformation extends StatelessWidget {
   const DetailsInformation({super.key});
@@ -26,17 +20,17 @@ class DetailsInformation extends StatelessWidget {
                     alignment: Alignment.bottomRight,
                     children: [
                       Image.asset(
-                        ImageConst.imageProfileBig,
+                        AppImage.imageProfileBig,
                       ),
                       Container(
                         height: 40.h,
                         width: 40.w,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: ColorConst.primaryColor,
+                          color: AppColor.primaryColor,
                         ),
                         child: SvgPicture.asset(
-                          IconConst.imageCamera,
+                          AppIcon.imageCamera,
                           fit: BoxFit.scaleDown,
                         ),
                       ),

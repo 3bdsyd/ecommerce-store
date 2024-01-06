@@ -1,12 +1,5 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 // ignore: must_be_immutable
 class TitleBack extends GetView<HomeControllerImp> {
@@ -33,7 +26,7 @@ class TitleBack extends GetView<HomeControllerImp> {
                   : controller.changeCurrentPageInformation(0);
             },
             child: SvgPicture.asset(
-              IconConst.buttonBack,
+              AppIcon.buttonBack,
               height: 25.h,
               width: 25.w,
             ),
@@ -46,7 +39,7 @@ class TitleBack extends GetView<HomeControllerImp> {
                     fontWeight: FontWeight.w700,
                   )
                 : context.textTheme.bodyMedium!.copyWith(
-                    color: ColorConst.sixthColor,
+                    color: AppColor.sixthColor,
                     fontFamily: 'SF Pro Text',
                     fontWeight: FontWeight.w600,
                   ),

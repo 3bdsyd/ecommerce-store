@@ -1,14 +1,15 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class MyServices extends GetxService {
   late GetStorage getBox;
 
   Future<MyServices> init() async {
-//----------------------------------------------------------------
-
     WidgetsFlutterBinding.ensureInitialized();
 
 //----------------------------------------------------------------
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
 
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -17,15 +18,12 @@ class MyServices extends GetxService {
 
 //----------------------------------------------------------------
 
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-
+ 
 //----------------------------------------------------------------
 
     await GetStorage.init();
     getBox = GetStorage();
-    
+
 //----------------------------------------------------------------
     return this;
   }

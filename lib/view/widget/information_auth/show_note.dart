@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class ShowNote extends StatelessWidget {
   const ShowNote({super.key});
@@ -39,7 +39,7 @@ class ShowNote extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
         border: Border.fromBorderSide(
-          BorderSide(color: ColorConst.primaryColor),
+          BorderSide(color: AppColor.primaryColor),
         ),
       ),
       child: Text(
@@ -55,7 +55,7 @@ class ShowNote extends StatelessWidget {
         SizedBox(
           height: 150,
           child: TextField(
-            cursorColor: ColorConst.thirdColor,
+            cursorColor: AppColor.thirdColor,
             textAlignVertical: TextAlignVertical.top,
             maxLines: null,
             expands: true,
@@ -65,19 +65,19 @@ class ShowNote extends StatelessWidget {
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: BorderSide(
-                  color: ColorConst.primaryColor,
+                  color: AppColor.primaryColor,
                 ),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: BorderSide(
-                  color: ColorConst.primaryColor,
+                  color: AppColor.primaryColor,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5),
                 borderSide: BorderSide(
-                  color: ColorConst.primaryColor,
+                  color: AppColor.primaryColor,
                 ),
               ),
             ),
@@ -94,7 +94,7 @@ class ShowNote extends StatelessWidget {
             height: 25.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(5),
-              color: ColorConst.thirdColor,
+              color: AppColor.thirdColor,
             ),
             child: Text(
               'Add note',

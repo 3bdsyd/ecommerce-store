@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class CenterCartWidget extends GetView<HomeControllerImp> {
   const CenterCartWidget(this.index, {super.key});
@@ -36,7 +36,7 @@ class CenterCartWidget extends GetView<HomeControllerImp> {
                       .toList()[index]
                       .discretionCategory,
                   style: context.textTheme.bodySmall!.copyWith(
-                    color: ColorConst.thirdColor,
+                    color: AppColor.thirdColor,
                     fontSize: 15,
                   ),
                   overflow: TextOverflow.ellipsis,
@@ -47,7 +47,7 @@ class CenterCartWidget extends GetView<HomeControllerImp> {
                 Text(
                   '\$ ${controller.myCategoryCart.keys.toList()[index].priceCategory}',
                   style: context.textTheme.bodySmall!.copyWith(
-                    color: ColorConst.thirdColor,
+                    color: AppColor.thirdColor,
                     fontSize: 15,
                   ),
                   overflow: TextOverflow.ellipsis,
@@ -58,7 +58,7 @@ class CenterCartWidget extends GetView<HomeControllerImp> {
                 Text(
                   '\$ ${num.parse(controller.myCategoryCart.keys.toList()[index].priceCategory) + (num.parse(controller.myCategoryCart.keys.toList()[index].priceCategory) - 100)}',
                   style: context.textTheme.bodySmall!.copyWith(
-                    color: ColorConst.thirdColor,
+                    color: AppColor.thirdColor,
                     fontSize: 11,
                     decoration: TextDecoration.lineThrough,
                   ),

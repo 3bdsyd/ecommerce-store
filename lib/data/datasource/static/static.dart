@@ -1,25 +1,19 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
-    logoImage: ImageConst.myLogo,
-    titleText: 'Oncho',
-    bodyImageOne: ImageConst.onBoardingImageOne,
-    bodyImageTow: ImageConst.onBoardingImageTow,
+    bodyImageOne: AppImage.onBoardingImageOne,
+    bodyImageTow: AppImage.onBoardingImageTow,
     bodyText: 'The best jewelry in \n The Town Now',
   ),
   OnBoardingModel(
-    logoImage: ImageConst.myLogo,
-    titleText: 'Oncho',
-    bodyImageOne: ImageConst.shopHomeOne,
-    bodyImageTow: ImageConst.shopHomeTow,
+    bodyImageOne: AppImage.shopHomeOne,
+    bodyImageTow: AppImage.shopHomeTow,
     bodyText: 'Shop from home now',
   ),
   OnBoardingModel(
-    logoImage: ImageConst.myLogo,
-    titleText: 'Oncho',
-    bodyImageOne: ImageConst.threeOne,
-    bodyImageTow: ImageConst.threeTow,
+    bodyImageOne: AppImage.threeOne,
+    bodyImageTow: AppImage.threeTow,
     bodyText: 'Enjoy good quality with \n constant discounts',
   ),
 ];
@@ -35,42 +29,42 @@ List<NameCategoryModel> nameCategoryList = [
 List<CategoryModel> categoryList = [
   CategoryModel(
     id: 1,
-    imageCategory: ImageConst.imageCategoryOne,
+    imageCategory: AppImage.imageCategoryOne,
     nameCategory: 'Rings',
     discretionCategory: 'Cream elegant',
     priceCategory: '10000000.90',
   ),
   CategoryModel(
     id: 2,
-    imageCategory: ImageConst.imageCategoryTow,
+    imageCategory: AppImage.imageCategoryTow,
     nameCategory: 'Bags',
     discretionCategory: 'Antelope',
     priceCategory: '200.00',
   ),
   CategoryModel(
     id: 3,
-    imageCategory: ImageConst.imageCategoryThree,
+    imageCategory: AppImage.imageCategoryThree,
     nameCategory: 'Rings',
     discretionCategory: 'Cream elegant',
     priceCategory: '10.90',
   ),
   CategoryModel(
     id: 4,
-    imageCategory: ImageConst.imageCategoryFour,
+    imageCategory: AppImage.imageCategoryFour,
     nameCategory: 'Rings',
     discretionCategory: 'Antelope',
     priceCategory: '10.00',
   ),
   CategoryModel(
     id: 5,
-    imageCategory: ImageConst.imageCategoryFive,
+    imageCategory: AppImage.imageCategoryFive,
     nameCategory: 'Bags',
     discretionCategory: 'Antelope',
     priceCategory: '200.00',
   ),
   CategoryModel(
     id: 6,
-    imageCategory: ImageConst.imageCategorySix,
+    imageCategory: AppImage.imageCategorySix,
     nameCategory: 'Rings',
     discretionCategory: 'Cream elegant',
     priceCategory: '10.90',

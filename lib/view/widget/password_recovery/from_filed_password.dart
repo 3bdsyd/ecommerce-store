@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class FromFiledPassword extends StatelessWidget {
   const FromFiledPassword({super.key});
@@ -27,9 +20,9 @@ class FromFiledPassword extends StatelessWidget {
         ),
         TextFormField(
           cursorWidth: 1,
-          cursorColor: ColorConst.thirdColor,
+          cursorColor: AppColor.thirdColor,
           style: context.textTheme.labelLarge!.copyWith(
-            color: ColorConst.thirdColor,
+            color: AppColor.thirdColor,
             fontFamily: 'SF Pro Display',
             fontWeight: FontWeight.w700,
             fontSize: 18,
@@ -37,23 +30,27 @@ class FromFiledPassword extends StatelessWidget {
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
             contentPadding: EdgeInsets.only(
-                top: 10.h, bottom: 10.h, left: 15.h, right: 15.h,),
+              top: 10.h,
+              bottom: 10.h,
+              left: 15.h,
+              right: 15.h,
+            ),
             border: UnderlineInputBorder(
               borderSide: BorderSide(
                 width: .5.w,
-                color: ColorConst.thirdColor,
+                color: AppColor.thirdColor,
               ),
             ),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 width: .5.w,
-                color: ColorConst.thirdColor,
+                color: AppColor.thirdColor,
               ),
             ),
             focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 width: .5.w,
-                color: ColorConst.thirdColor,
+                color: AppColor.thirdColor,
               ),
             ),
             prefixIcon: Padding(
@@ -67,7 +64,7 @@ class FromFiledPassword extends StatelessWidget {
             suffixIcon: Padding(
               padding: const EdgeInsets.all(10),
               child: SvgPicture.asset(
-                IconConst.fromFieldImagePasswordRecovery,
+                AppIcon.fromFieldImagePasswordRecovery,
               ),
             ),
           ),

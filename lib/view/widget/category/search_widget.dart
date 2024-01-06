@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({super.key});
@@ -20,31 +13,31 @@ class SearchWidget extends StatelessWidget {
           height: 35.h,
           child: TextField(
             style: context.textTheme.labelSmall,
-            cursorColor: ColorConst.thirdColor,
+            cursorColor: AppColor.thirdColor,
             decoration: InputDecoration(
               border: InputBorder.none,
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
               filled: true,
-              fillColor: ColorConst.thirdColor.withOpacity(.1),
+              fillColor: AppColor.thirdColor.withOpacity(.1),
               contentPadding: EdgeInsets.only(
                 top: 6.h,
                 bottom: 2.w,
               ),
               hintText: 'Search products ...',
               hintStyle: context.textTheme.labelLarge!.copyWith(
-                color: ColorConst.thirdColor.withOpacity(.3),
+                color: AppColor.thirdColor.withOpacity(.3),
               ),
               prefixIcon: Padding(
                 padding: const EdgeInsets.all(12),
                 child: SvgPicture.asset(
-                  IconConst.imageMagnifyingglass,
+                  AppIcon.imageMagnifyingglass,
                 ),
               ),
               suffixIcon: Padding(
                 padding: const EdgeInsets.all(12),
                 child: SvgPicture.asset(
-                  IconConst.imageMicrophone,
+                  AppIcon.imageMicrophone,
                 ),
               ),
             ),

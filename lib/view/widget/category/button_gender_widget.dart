@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 
 class ButtonGenderWidget extends GetView<HomeControllerImp> {
   const ButtonGenderWidget({super.key});
@@ -23,8 +23,8 @@ class ButtonGenderWidget extends GetView<HomeControllerImp> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: controller.currentGender.value == index
-                        ? ColorConst.primaryColor
-                        : ColorConst.secondaryColor,
+                        ? AppColor.primaryColor
+                        : AppColor.secondaryColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   alignment: Alignment.center,
@@ -36,7 +36,7 @@ class ButtonGenderWidget extends GetView<HomeControllerImp> {
                       fontWeight: FontWeight.bold,
                       color: controller.currentGender.value == index
                           ? Colors.white
-                          : ColorConst.thirdColor,
+                          : AppColor.thirdColor,
                     ),
                   ),
                 ),

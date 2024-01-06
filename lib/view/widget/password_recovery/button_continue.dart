@@ -1,12 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:ecommerce_store/router/routes.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ButtonContinue extends StatelessWidget {
   const ButtonContinue({super.key});
@@ -18,10 +10,10 @@ class ButtonContinue extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         onPressed: () {
-          Get.toNamed(ScreenNames.otpAuth);
+          Get.toNamed(AppNameScreen.otpAuth);
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: ColorConst.primaryColor,
+          backgroundColor: AppColor.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -35,7 +27,7 @@ class ButtonContinue extends StatelessWidget {
               style: context.textTheme.labelLarge,
             ),
             SvgPicture.asset(
-              IconConst.fromFieldImageLogIn,
+              AppIcon.fromFieldImageLogIn,
               width: 28.w,
               fit: BoxFit.scaleDown,
             ),

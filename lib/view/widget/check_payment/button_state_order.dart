@@ -1,9 +1,4 @@
-import 'package:ecommerce_store/router/routes.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class ButtonStateOrder extends StatelessWidget {
   const ButtonStateOrder({super.key, required this.cancelOrder});
@@ -16,12 +11,14 @@ class ButtonStateOrder extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () {
           Get.toNamed(
-            cancelOrder ? ScreenNames.orderFailed : ScreenNames.orderComplete,
+            cancelOrder
+                ? AppNameScreen.orderFailed
+                : AppNameScreen.orderComplete,
           );
         },
         style: ElevatedButton.styleFrom(
           backgroundColor:
-              cancelOrder ? ColorConst.secondaryColor : ColorConst.primaryColor,
+              cancelOrder ? AppColor.secondaryColor : AppColor.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),

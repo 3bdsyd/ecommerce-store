@@ -1,14 +1,8 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
+import 'package:ecommerce_store/core/constants/app_image.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
 
-class MapAddress extends GetView<HomeControllerImp>{
+class MapAddress extends GetView<HomeControllerImp> {
   const MapAddress({super.key});
 
   @override
@@ -27,7 +21,7 @@ class MapAddress extends GetView<HomeControllerImp>{
                 controller.changeStateMap(false);
               },
               child: SvgPicture.asset(
-                IconConst.buttonBack,
+                AppIcon.buttonBack,
                 width: 25.w,
                 height: 25.h,
                 fit: BoxFit.scaleDown,
@@ -44,13 +38,13 @@ class MapAddress extends GetView<HomeControllerImp>{
               borderRadius: BorderRadius.circular(15),
               child: TextField(
                 style: context.textTheme.labelSmall,
-                cursorColor: ColorConst.thirdColor,
+                cursorColor: AppColor.thirdColor,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   enabledBorder: InputBorder.none,
                   focusedBorder: InputBorder.none,
                   filled: true,
-                  fillColor: ColorConst.thirdColor.withOpacity(.1),
+                  fillColor: AppColor.thirdColor.withOpacity(.1),
                   contentPadding: const EdgeInsets.only(
                     left: 15,
                     bottom: 5,
@@ -59,18 +53,18 @@ class MapAddress extends GetView<HomeControllerImp>{
                   ),
                   hintText: 'Enter Your City ...',
                   hintStyle: context.textTheme.labelLarge!.copyWith(
-                    color: ColorConst.thirdColor.withOpacity(.3),
+                    color: AppColor.thirdColor.withOpacity(.3),
                   ),
                   prefixIcon: Padding(
                     padding: const EdgeInsets.all(12),
                     child: SvgPicture.asset(
-                      IconConst.imageMagnifyingglass,
+                      AppIcon.imageMagnifyingglass,
                     ),
                   ),
                   suffixIcon: Padding(
                     padding: const EdgeInsets.all(12),
                     child: SvgPicture.asset(
-                      IconConst.imageMicrophone,
+                      AppIcon.imageMicrophone,
                     ),
                   ),
                 ),
@@ -81,10 +75,10 @@ class MapAddress extends GetView<HomeControllerImp>{
             alignment: Alignment.center,
             children: [
               Image.asset(
-                ImageConst.imagesMap,
+                AppImage.imagesMap,
                 fit: BoxFit.cover,
               ),
-              Image.asset(ImageConst.imagesBullet)
+              Image.asset(AppImage.imagesBullet)
             ],
           ),
           Align(
@@ -97,7 +91,7 @@ class MapAddress extends GetView<HomeControllerImp>{
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5),
                 border: Border.fromBorderSide(
-                  BorderSide(color: ColorConst.primaryColor),
+                  BorderSide(color: AppColor.primaryColor),
                 ),
               ),
               child: Text(

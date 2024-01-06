@@ -1,12 +1,5 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class CustomButtonMaxMinWidget extends GetView<HomeControllerImp> {
   const CustomButtonMaxMinWidget(this.minButton, {super.key});
@@ -17,7 +10,7 @@ class CustomButtonMaxMinWidget extends GetView<HomeControllerImp> {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        backgroundColor: ColorConst.tenColor,
+        backgroundColor: AppColor.tenColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
@@ -42,7 +35,7 @@ class CustomButtonMaxMinWidget extends GetView<HomeControllerImp> {
             ),
           ),
           SvgPicture.asset(
-            IconConst.imageLabelIcon,
+            AppIcon.imageLabelIcon,
             width: 30.w,
             height: 20.h,
             fit: BoxFit.scaleDown,

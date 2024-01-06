@@ -1,12 +1,6 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
 
 class AppBarDetailsProduct extends GetView<HomeControllerImp> {
   const AppBarDetailsProduct({super.key});
@@ -24,7 +18,7 @@ class AppBarDetailsProduct extends GetView<HomeControllerImp> {
               controller.currentPage(0);
             },
             child: SvgPicture.asset(
-              IconConst.buttonBack,
+              AppIcon.buttonBack,
               height: 25.h,
               width: 25.w,
             ),
@@ -32,13 +26,13 @@ class AppBarDetailsProduct extends GetView<HomeControllerImp> {
           Text(
             'Product Page',
             style: context.textTheme.bodyMedium!.copyWith(
-              color: ColorConst.sixthColor,
+              color: AppColor.sixthColor,
               fontFamily: 'SF Pro Text',
               fontWeight: FontWeight.w600,
             ),
           ),
           SvgPicture.asset(
-            IconConst.imagesShopDetails,
+            AppIcon.imagesShopDetails,
             height: 20.h,
             width: 20.w,
           )

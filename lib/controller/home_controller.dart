@@ -1,4 +1,4 @@
-import 'package:ecommerce_store/core/constant/color_const.dart';
+import 'package:ecommerce_store/core/constants/app_color.dart';
 import 'package:ecommerce_store/view/screen/cart.dart';
 import 'package:ecommerce_store/view/screen/favorite.dart';
 import 'package:ecommerce_store/view/screen/information_personal.dart';
@@ -63,12 +63,12 @@ class HomeControllerImp extends HomeController {
   ].obs;
   final RxInt currentGender = 0.obs;
   final List<Color> colorsList = [
-    ColorConst.primaryColor,
-    ColorConst.secondaryColor,
-    ColorConst.thirdColor,
-    ColorConst.fourthColor,
-    ColorConst.fifthColor,
-    ColorConst.sixthColor,
+    AppColor.primaryColor,
+    AppColor.secondaryColor,
+    AppColor.thirdColor,
+    AppColor.fourthColor,
+    AppColor.fifthColor,
+    AppColor.sixthColor,
   ].obs;
   final RxInt currentColor = 0.obs;
 

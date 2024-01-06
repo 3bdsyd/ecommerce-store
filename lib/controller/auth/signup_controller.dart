@@ -1,53 +1,33 @@
-import 'package:ecommerce_store/core/constant/package_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 abstract class SignUpController extends GetxController {
-  void getData();
-  void changeObscureText();
+  void changeObscurePassword();
   void changeApprovalStandards();
 }
 
 class SignUpControllerImp extends SignUpController {
-//----------------------------------------------------------------
-
-  @override
-  void onInit() {
-    user.bindStream(_auth.authStateChanges());
-    email = TextEditingController();
-    username = TextEditingController();
-    password = TextEditingController();
-    super.onInit();
-  }
-
-//----------------------------------------------------------------
-
-  @override
-  void dispose() {
-    email.dispose();
-    username.dispose();
-    password.dispose();
-    super.dispose();
-  }
-
-  SignUpRemote signUpRemoteController = SignUpRemote(Get.find());
+  SignUpData signUpRemoteController = SignUpData(Get.find());
   final MyServices myServicesController = Get.find();
 
 //----------------------------------------------------------------
 
   final GlobalKey<FormState> globalKeySignUp = GlobalKey<FormState>();
-  late TextEditingController email;
-  late TextEditingController username;
-  late TextEditingController password;
+  final TextEditingController email = TextEditingController();
+  final TextEditingController username = TextEditingController();
+  final TextEditingController password = TextEditingController();
 
 //----------------------------------------------------------------
 
   bool obscureTextShow = true;
-  bool approvalOfStandards = true;
+  bool approvalOfStandards = false;
 
 //----------------------------------------------------------------
 
   Map<String, dynamic> data = {};
 
   late StatusRequest statusRequest = StatusRequest.none;
+
+  Future<void> signUp() async {}
 
 //----------------------------------------------------------------
   @override
@@ -66,13 +46,13 @@ class SignUpControllerImp extends SignUpController {
           if (StatusRequest.success == statusRequest) {
             if (response['code'] == 0) {
               data.addAll(response['data']);
-              Get.offNamed(ScreenNames.signInScreen);
+              Get.offNamed(AppNameScreen.signInScreen);
               myServicesController.getBox.write('Token', data['Token']);
             } else {
               Get.snackbar(
                 '',
                 '',
-                backgroundColor: ColorConst.primaryColor,
+                backgroundColor: AppColor.primaryColor,
                 titleText: const Text('Error'),
                 messageText: Text(
                   response['message'],
@@ -94,7 +74,7 @@ class SignUpControllerImp extends SignUpController {
 //----------------------------------------------------------------
 
   @override
-  void changeObscureText() {
+  void changeObscurePassword() {
     obscureTextShow = !obscureTextShow;
     update();
   }
@@ -107,49 +87,39 @@ class SignUpControllerImp extends SignUpController {
     update();
   }
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
-  Rx<User?> user = Rx<User?>(null);
+  Future<UserCredential?> signInWithGoogle() async {
+    final _googleSignIn = GoogleSignIn();
+    // _googleSignIn.disconnect().catchError((e, stack) {
+    //   print(e);
+    // });
 
-//----------------------------------------------------------------
+    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
-  Future<void> registerWithGoogle() async {
-    try {
-      final GoogleSignInAccount? googleSignInAccount =
-          await _googleSignIn.signIn();
-      final GoogleSignInAuthentication googleSignInAuthentication =
-          await googleSignInAccount!.authentication;
+    // handling the exception when cancel sign in
+    if (googleUser == null) return null;
 
-      final AuthCredential credential = GoogleAuthProvider.credential(
-        accessToken: googleSignInAuthentication.accessToken,
-        idToken: googleSignInAuthentication.idToken,
-      );
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser.authentication;
 
-      final UserCredential userCredential =
-          await _auth.signInWithCredential(credential);
-      print('111111111111111111111111');
-      final User? user = userCredential.user;
-      print('dfsdf');
-      if (user != null) {
-        // Send a verification email to the user's account.
-        await user.sendEmailVerification();
-
-        Get.snackbar(
-            'Success', 'Registration successful! Verification email sent.');
-      }
-    } catch (e) {
-      print(e);
-      Get.snackbar('Error', 'Registration failed.');
-    }
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+    return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-  Future<void> signOut() async {
-    statusRequest = StatusRequest.loading;
-    update();
-    await _auth.signOut();
-    await _googleSignIn.signOut();
-    statusRequest = StatusRequest.success;
-    Get.snackbar('Success', 'You have successfully logged out');
-    update();
+//----------------------------------------------------------------
+Future signOut() async {
+  var result = await FirebaseAuth.instance.signOut();
+  return result;
+}
+  @override
+  void dispose() {
+    email.dispose();
+    username.dispose();
+    password.dispose();
+    super.dispose();
   }
 }

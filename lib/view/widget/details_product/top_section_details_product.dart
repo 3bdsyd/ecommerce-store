@@ -1,12 +1,5 @@
 import 'package:ecommerce_store/controller/home_controller.dart';
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class TopSectionDetailsProduct extends GetView<HomeControllerImp> {
   const TopSectionDetailsProduct({super.key});
@@ -22,7 +15,7 @@ class TopSectionDetailsProduct extends GetView<HomeControllerImp> {
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SvgPicture.asset(IconConst.imagesShareIcon),
+              SvgPicture.asset(AppIcon.imagesShareIcon),
               SizedBox(
                 height: 120.h,
               ),
@@ -35,8 +28,8 @@ class TopSectionDetailsProduct extends GetView<HomeControllerImp> {
                     height: 7.w,
                     decoration: BoxDecoration(
                         color: index == 4
-                            ? ColorConst.secondaryColor
-                            : ColorConst.thirdColor,
+                            ? AppColor.secondaryColor
+                            : AppColor.thirdColor,
                         shape: BoxShape.circle),
                     duration: const Duration(
                       milliseconds: 500,
@@ -72,7 +65,7 @@ class TopSectionDetailsProduct extends GetView<HomeControllerImp> {
                     width: 100.w,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: ColorConst.thirdColor.withOpacity(.95),
+                      color: AppColor.thirdColor.withOpacity(.95),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../controller/home_controller.dart';
-import '../../core/constant/color_const.dart';
+import '../../core/constants/app_color.dart';
 import '../widget/cart/check_payment.dart';
 import '../widget/cart/details_order.dart';
 import '../widget/cart/get_view_cart.dart';
@@ -44,7 +44,7 @@ class Cart extends GetView<HomeControllerImp> {
                           height: 5.h,
                         ),
                         Divider(
-                          color: ColorConst.thirdColor,
+                          color: AppColor.thirdColor,
                           indent: 20.w,
                           endIndent: 20.w,
                         ),

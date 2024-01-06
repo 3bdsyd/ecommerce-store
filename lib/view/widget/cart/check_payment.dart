@@ -1,12 +1,5 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
+import 'package:ecommerce_store/core/constants/app_package.dart';
 import '../../../controller/home_controller.dart';
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
 import '../check_payment/page_builder_payment.dart';
 
 class CheckPayment extends GetView<HomeControllerImp> {
@@ -37,7 +30,7 @@ class CheckPayment extends GetView<HomeControllerImp> {
                   Get.back();
                 },
                 child: SvgPicture.asset(
-                  IconConst.buttonBack,
+                  AppIcon.buttonBack,
                   width: 25.w,
                   height: 25.h,
                   fit: BoxFit.scaleDown,
@@ -60,7 +53,7 @@ class CheckPayment extends GetView<HomeControllerImp> {
                       width: 25.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: ColorConst.primaryColor,
+                        color: AppColor.primaryColor,
                       ),
                       child: Text(
                         '1',
@@ -83,7 +76,7 @@ class CheckPayment extends GetView<HomeControllerImp> {
                     children: [
                       Container(
                         height: 1.h,
-                        color: ColorConst.thirdColor.withOpacity(.5),
+                        color: AppColor.thirdColor.withOpacity(.5),
                       ),
                       SizedBox(
                         height: 15.h,
@@ -102,7 +95,7 @@ class CheckPayment extends GetView<HomeControllerImp> {
                       width: 25.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: ColorConst.primaryColor,
+                        color: AppColor.primaryColor,
                       ),
                       child: Text(
                         '2',
@@ -125,7 +118,7 @@ class CheckPayment extends GetView<HomeControllerImp> {
                     children: [
                       Container(
                         height: 1.h,
-                        color: ColorConst.thirdColor.withOpacity(.5),
+                        color: AppColor.thirdColor.withOpacity(.5),
                       ),
                       SizedBox(
                         height: 15.h,
@@ -144,7 +137,7 @@ class CheckPayment extends GetView<HomeControllerImp> {
                       width: 25.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: ColorConst.primaryColor,
+                        color: AppColor.primaryColor,
                       ),
                       child: Text(
                         '3',

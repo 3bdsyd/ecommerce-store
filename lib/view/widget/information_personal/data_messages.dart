@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 
-import '../../../core/constant/color_const.dart';
+import '../../../core/constants/app_color.dart';
 import '../../../data/datasource/static/static.dart';
 import 'button_return_back_chat.dart';
 import 'messages_admin.dart';
@@ -41,8 +41,7 @@ class DataMessages extends StatelessWidget {
                                   'Yesterday 9:41',
                                   style:
                                       context.textTheme.labelMedium!.copyWith(
-                                    color:
-                                        ColorConst.thirdColor.withOpacity(.6),
+                                    color: AppColor.thirdColor.withOpacity(.6),
                                   ),
                                 )
                               : Container(

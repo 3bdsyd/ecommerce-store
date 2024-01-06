@@ -1,11 +1,4 @@
-import 'package:ecommerce_store/core/constant/icon_const.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-
-import '../../../core/constant/color_const.dart';
-import '../../../core/constant/image_const.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class TitleWidget extends StatelessWidget {
   const TitleWidget({
@@ -23,7 +16,7 @@ class TitleWidget extends StatelessWidget {
           GestureDetector(
             onTap: () => Get.back(),
             child: SvgPicture.asset(
-              IconConst.buttonBack,
+              AppIcon.buttonBack,
               height: 25.h,
               width: 25.w,
             ),
@@ -31,15 +24,13 @@ class TitleWidget extends StatelessWidget {
           Text(
             favoriteScreen ? 'My Favorite' : 'My Cart',
             style: context.textTheme.bodyMedium!.copyWith(
-              color: ColorConst.sixthColor,
+              color: AppColor.sixthColor,
               fontFamily: 'SF Pro Text',
               fontWeight: FontWeight.w600,
             ),
           ),
           SvgPicture.asset(
-            favoriteScreen
-                ? IconConst.imageVectorLove
-                : IconConst.imageVectorCart,
+            favoriteScreen ? AppIcon.imageVectorLove : AppIcon.imageVectorCart,
             height: 20.h,
             width: 20.w,
           )

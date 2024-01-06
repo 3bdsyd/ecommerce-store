@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '28852788932',
     projectId: 'ecommerce-store-d1e6c',
     storageBucket: 'ecommerce-store-d1e6c.appspot.com',
+    androidClientId: '28852788932-nbpra5phnq1uog8rho65m27kif2etrim.apps.googleusercontent.com',
     iosClientId: '28852788932-ur7ar6snso9keta6o8lpbrtog1abkuq1.apps.googleusercontent.com',
     iosBundleId: 'com.example.ecommerceStore',
   );
