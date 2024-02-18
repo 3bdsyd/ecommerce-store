@@ -1,11 +1,12 @@
-import '../../../core/class/crud.dart';
-import '../../../core/constants/app_link.dart';
+import 'package:ecommerce_store/core/constants/app_package.dart';
 
 class SignInRemote {
   Crud crud;
   SignInRemote(this.crud);
   getData(String email, String password) async {
-    var response = await crud.postData(AppLink.authLogin, {
+    var response = await crud.crud(
+      TypeRequest.get,
+      AppLink.authLogin, {
       'email': email,
       'password': password,
     });

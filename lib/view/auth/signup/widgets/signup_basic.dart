@@ -17,14 +17,14 @@ class SignUpBasicWidget extends GetView<SignUpControllerImp> {
           const CustomVertical(height: 20),
           CustomButton(
             backgroundColor: AppColor.primaryColor,
-            onPressed: () => controller.signInWithGoogle(),
+            onPressed: () => controller.submitSignUp(),
             widget: const SignUpStyleButtonWidget(),
           ),
           const CustomVertical(height: 10),
           const SignUpLableAlreadyAccountWidget(),
           CustomVertical(height: Get.height / 20),
           CustomButton(
-            onPressed: () => controller.signUp(),
+            onPressed: () => controller.signInWithFacebook(),
             widget: const CustomStyleButtonFacebook(),
             backgroundColor: AppColor.blueColor,
           ),

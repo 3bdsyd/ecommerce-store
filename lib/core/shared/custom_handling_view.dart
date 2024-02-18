@@ -14,9 +14,9 @@ class HandlingDataView extends StatelessWidget {
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
         ? LottieBuilder.asset(AppAnimation.loadingAnimation)
-        : statusRequest == StatusRequest.offlinefailure
+        : statusRequest == StatusRequest.offline
             ? LottieBuilder.asset(AppAnimation.loadingAnimation)
-            : statusRequest == StatusRequest.serverfailure
+            : statusRequest == StatusRequest.failure
                 ? LottieBuilder.asset(AppAnimation.loadingAnimation)
                 : statusRequest == StatusRequest.failure
                     ? LottieBuilder.asset(AppAnimation.loadingAnimation)

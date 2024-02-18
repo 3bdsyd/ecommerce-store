@@ -1,7 +1,7 @@
 class AppIcon {
 //---------------------------Root Icon-------------------------------------
 
-  static const rootIcon = 'assets/images/icon/';
+  static const rootIcon = 'assets/icon/';
 
 //---------------------------Loading Animation-------------------------------------
 

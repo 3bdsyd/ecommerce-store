@@ -32,6 +32,8 @@ class OnBoardingLogoTitleWidget extends StatelessWidget {
           ),
         ),
       ],
-    );
+    ).animate().fade().slideY(
+          duration: const Duration(milliseconds: 350),
+        );
   }
 }

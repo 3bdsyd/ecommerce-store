@@ -5,7 +5,7 @@ class CustomFormField extends StatelessWidget {
   final String imagePrefix;
   final String label;
   final TextEditingController controller;
-  final String? imageSuffix;
+  final Widget? imageSuffix;
   final bool? obscureText;
   final Function(String value) validator;
 
@@ -49,21 +49,13 @@ class CustomFormField extends StatelessWidget {
                 imagePrefix,
               ),
             ),
-            suffixIcon: imageSuffix != null
-                ? GestureDetector(
-                    // onTap: signUpController.changeObscureText,
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: SvgPicture.asset(
-                        imageSuffix!,
-                        fit: BoxFit.scaleDown,
-                      ),
-                    ),
-                  )
-                : null,
+            suffixIcon: Padding(
+              padding: const EdgeInsets.all(12),
+              child: imageSuffix,
+            ),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: AppColor.thirdColor,
+                color: AppColor.eighthColor,
               ),
               borderRadius: BorderRadius.circular(15),
             ),

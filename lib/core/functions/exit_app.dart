@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:ecommerce_store/core/constants/app_package.dart';
 
-Future<bool> alertExitApp(BuildContext context) {
+void alertExitApp(BuildContext context) {
   Get.defaultDialog(
     title: "Note",
     titleStyle: context.textTheme.bodyMedium,
@@ -24,5 +24,4 @@ Future<bool> alertExitApp(BuildContext context) {
     ],
     barrierDismissible: false,
   );
-  return Future.value(true);
 }

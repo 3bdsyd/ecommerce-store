@@ -39,7 +39,10 @@ class OnBoardingSliderImageWidget extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ).animate().fade().slideX(
+                begin: -1,
+                duration: const Duration(milliseconds: 500),
+              ),
           Positioned(
             right: 0,
             bottom: 0,
@@ -67,7 +70,10 @@ class OnBoardingSliderImageWidget extends StatelessWidget {
                 ),
               ),
             ),
-          ),
+          ).animate().fade().slideX(
+                begin: 1,
+                duration: const Duration(milliseconds: 500),
+              ),
         ],
       ),
     );

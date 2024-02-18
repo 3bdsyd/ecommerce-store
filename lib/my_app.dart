@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           theme: AppTheme.themeData,
-          initialRoute: AppNameScreen.splashScreen,
+          initialRoute: AppNameScreen.home,
           getPages: Routes.getPages,
           initialBinding: CrudBinding(),
         );

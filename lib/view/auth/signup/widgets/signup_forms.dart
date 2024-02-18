@@ -8,7 +8,7 @@ class SignUpFormsWidget extends GetView<SignUpControllerImp> {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 5.w),
       child: Form(
-        key: controller.globalKeySignUp,
+        key: controller.signUpKeyForm,
         child: Column(
           children: [
             CustomFormField(
@@ -18,7 +18,10 @@ class SignUpFormsWidget extends GetView<SignUpControllerImp> {
                   FieldsValidators.emailValidator(value),
               controller: controller.email,
               label: 'email',
-            ),
+            ).animate().fade().slideX(
+                  begin: 1,
+                  duration: const Duration(milliseconds: 500),
+                ),
             CustomFormField(
               imagePrefix: AppIcon.fromFieldImageTow,
               hinText: 'ex: adam',
@@ -26,16 +29,27 @@ class SignUpFormsWidget extends GetView<SignUpControllerImp> {
                   FieldsValidators.userNameValidator(value),
               controller: controller.username,
               label: 'Username',
-            ),
-            CustomFormField(
-              imagePrefix: AppIcon.fromFieldImageThree,
-              hinText: '• • • • • • • •',
-              imageSuffix: AppIcon.fromFieldImageFour,
-              validator: (String value) =>
-                  FieldsValidators.passwordValidator(value),
-              controller: controller.password,
-              obscureText: controller.obscureTextShow,
-              label: 'Password',
+            ).animate().fade().slideX(
+                  begin: -1,
+                  duration: const Duration(milliseconds: 500),
+                ),
+            GetBuilder<SignUpControllerImp>(
+              builder: (_) => CustomFormField(
+                imagePrefix: AppIcon.fromFieldImageThree,
+                hinText: '• • • • • • • •',
+                imageSuffix: GestureDetector(
+                  onTap: () => controller.changeObscurePassword(),
+                  child: SvgPicture.asset(AppIcon.fromFieldImageFour),
+                ),
+                validator: (String value) =>
+                    FieldsValidators.passwordValidator(value),
+                controller: controller.password,
+                obscureText: controller.obscureTextShow,
+                label: 'Password',
+              ).animate().fade().slideX(
+                    begin: 1,
+                    duration: const Duration(milliseconds: 500),
+                  ),
             ),
           ],
         ),

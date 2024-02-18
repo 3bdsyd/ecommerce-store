@@ -6,8 +6,9 @@ class SignUpScreen extends GetView<SignUpControllerImp> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: WillPopScope(
-        onWillPop: () => alertExitApp(context),
+      child: PopScope(
+        canPop: false,
+        onPopInvoked: (didPop) => alertExitApp(context),
         child: Scaffold(
           body: GetBuilder<SignUpControllerImp>(
             builder: (_) => HandlingDataView(

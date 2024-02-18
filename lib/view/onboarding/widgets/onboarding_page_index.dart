@@ -28,6 +28,9 @@ class OnBoardingPageIndex extends GetView<OnBoardingControllerImp> {
           )
         ],
       ),
-    );
+    ).animate().fade().slideX(
+          begin: 1,
+          duration: const Duration(milliseconds: 800),
+        );
   }
 }

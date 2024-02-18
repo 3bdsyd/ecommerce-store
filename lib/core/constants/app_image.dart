@@ -2,7 +2,7 @@ class AppImage {
 
 //---------------------------Root Image-------------------------------------
 
-  static const rootImages = 'assets/images/image/';
+  static const rootImages = 'assets/image/';
 
 //---------------------------Root Image-------------------------------------
 

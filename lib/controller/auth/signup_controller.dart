@@ -1,77 +1,21 @@
 import 'package:ecommerce_store/core/constants/app_package.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class SignUpController extends GetxController {
+  // Control showing and hiding the password
   void changeObscurePassword();
+
+  // Agree to the terms of use of the applications
   void changeApprovalStandards();
+
+  //
+  Future<void> signInWithGoogle();
 }
 
 class SignUpControllerImp extends SignUpController {
-  SignUpData signUpRemoteController = SignUpData(Get.find());
-  final MyServices myServicesController = Get.find();
-
-//----------------------------------------------------------------
-
-  final GlobalKey<FormState> globalKeySignUp = GlobalKey<FormState>();
-  final TextEditingController email = TextEditingController();
-  final TextEditingController username = TextEditingController();
-  final TextEditingController password = TextEditingController();
-
-//----------------------------------------------------------------
-
   bool obscureTextShow = true;
-  bool approvalOfStandards = false;
-
-//----------------------------------------------------------------
-
-  Map<String, dynamic> data = {};
-
-  late StatusRequest statusRequest = StatusRequest.none;
-
-  Future<void> signUp() async {}
-
-//----------------------------------------------------------------
-  @override
-  void getData() async {
-    if (globalKeySignUp.currentState!.validate()) {
-      if (approvalOfStandards) {
-        try {
-          statusRequest = StatusRequest.loading;
-          update();
-          var response = await signUpRemoteController.getData(
-            email.text,
-            username.text,
-            password.text,
-          );
-          statusRequest = handlingData(response);
-          if (StatusRequest.success == statusRequest) {
-            if (response['code'] == 0) {
-              data.addAll(response['data']);
-              Get.offNamed(AppNameScreen.signInScreen);
-              myServicesController.getBox.write('Token', data['Token']);
-            } else {
-              Get.snackbar(
-                '',
-                '',
-                backgroundColor: AppColor.primaryColor,
-                titleText: const Text('Error'),
-                messageText: Text(
-                  response['message'],
-                ),
-              );
-              statusRequest = StatusRequest.failure;
-            }
-          }
-          update();
-        } catch (e) {
-          Get.snackbar('Error', 'The login process has finished');
-        }
-      } else {
-        Get.snackbar('Note', 'You must agree to the terms');
-      }
-    }
-    update();
-  }
-//----------------------------------------------------------------
 
   @override
   void changeObscurePassword() {
@@ -80,6 +24,7 @@ class SignUpControllerImp extends SignUpController {
   }
 
 //----------------------------------------------------------------
+  bool approvalOfStandards = false;
 
   @override
   void changeApprovalStandards() {
@@ -87,34 +32,144 @@ class SignUpControllerImp extends SignUpController {
     update();
   }
 
-  Future<UserCredential?> signInWithGoogle() async {
-    final _googleSignIn = GoogleSignIn();
-    // _googleSignIn.disconnect().catchError((e, stack) {
-    //   print(e);
-    // });
+//----------------------------------------------------------------
 
-    final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+  final SignUpData signUpData = SignUpData(Get.find());
+  final MyServices myServices = Get.find();
 
-    // handling the exception when cancel sign in
-    if (googleUser == null) return null;
+  final GlobalKey<FormState> signUpKeyForm = GlobalKey<FormState>();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController username = TextEditingController();
+  final TextEditingController password = TextEditingController();
 
-    // Obtain the auth details from the request
-    final GoogleSignInAuthentication? googleAuth =
-        await googleUser.authentication;
+  StatusRequest statusRequest = StatusRequest.none;
 
-    // Create a new credential
-    final credential = GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
+  Future<void> submitSignUp() async {
+    Get.dialog(
+      LottieBuilder.asset(AppAnimation.loadingAnimation),
     );
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+    print(email.text);
+    print(password.text);
+
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email.text,
+        password: password.text,
+      );
+      Get.back();
+
+      // Handle successful user creation, e.g., navigate to the home page
+      // Navigator.pushReplacementNamed(context, '/home');
+    } on FirebaseAuthException catch (e) {
+      Get.back();
+
+      String errorMessage = 'An error occurred during sign up.';
+
+      if (e.code == 'weak-password') {
+        errorMessage =
+            'The password provided is too weak. Please choose a stronger password.';
+      } else if (e.code == 'email-already-in-use') {
+        errorMessage =
+            'An account already exists for the provided email address. Please sign in or use a different email.';
+      } else {
+        // Handle other FirebaseAuthExceptions
+        errorMessage =
+            'An unexpected error occurred during sign up. Please try again.';
+      }
+
+      customSnackBar(title: 'Error', message: errorMessage);
+    } catch (_) {
+      customSnackBar(
+          title: 'Error',
+          message:
+              'An unexpected error occurred during sign up. Please try again.');
+    }
   }
 
 //----------------------------------------------------------------
-Future signOut() async {
-  var result = await FirebaseAuth.instance.signOut();
-  return result;
-}
+
+  final GoogleSignIn googleSignIn = GoogleSignIn();
+
+  @override
+  Future<void> signInWithGoogle() async {
+    Get.dialog(
+      LottieBuilder.asset(AppAnimation.loadingAnimation),
+    );
+
+    try {
+      // Trigger the authentication flow
+      final GoogleSignInAccount? googleUser = await googleSignIn.signIn();
+
+      // Check if googleUser is not null
+      if (googleUser == null) {
+        Get.back();
+        customSnackBar(title: 'notice', message: 'Google login canceled.');
+        return;
+      }
+
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      Get.back();
+
+      // Create a new credential
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      // Once signed in, return the UserCredential
+      await FirebaseAuth.instance.signInWithCredential(credential);
+    } catch (error) {
+      // Handle other exceptions
+
+      Get.back();
+      customSnackBar(title: 'notice', message: 'An error occurred. Please');
+    }
+  }
+
+//----------------------------------------------------------------
+
+  final FacebookAuth facebookLogin = FacebookAuth.instance;
+
+  Future<void> signInWithFacebook() async {
+    try {
+      // Trigger the sign-in flow
+      final LoginResult loginResult = await facebookLogin.login();
+
+      if (loginResult.status == LoginStatus.success) {
+        // Check if accessToken is not null
+        if (loginResult.accessToken != null) {
+          // Create a credential from the access token
+          final OAuthCredential facebookAuthCredential =
+              FacebookAuthProvider.credential(loginResult.accessToken!.token);
+
+          // Once signed in, return the UserCredential
+          await FirebaseAuth.instance
+              .signInWithCredential(facebookAuthCredential);
+        } else {
+          // Handle case where accessToken is null
+          customSnackBar(
+              title: 'notice',
+              message: 'Facebook login failed. Please try again.');
+        }
+      } else {
+        // Handle case where login status is not success
+        customSnackBar(
+            title: 'notice',
+            message: 'Facebook login failed. Please try again.');
+      }
+    } catch (error) {
+      Get.back();
+      // Handle other exceptions
+      customSnackBar(
+          title: 'notice', message: 'An error occurred. Please try again.');
+    }
+  }
+
+//----------------------------------------------------------------
+
   @override
   void dispose() {
     email.dispose();

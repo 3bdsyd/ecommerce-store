@@ -1,7 +1,7 @@
 class AppAnimation {
 //---------------------------Root Animation-------------------------------------
 
-  static const rootAnimation = 'assets/images/animation/';
+  static const rootAnimation = 'assets/animation/';
 
 //---------------------------Loading Animation-------------------------------------
 

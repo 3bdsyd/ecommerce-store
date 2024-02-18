@@ -20,7 +20,10 @@ class OnBoardingSliderWidget extends StatelessWidget {
               color: AppColor.darkColor,
             ),
             textAlign: TextAlign.center,
-          ),
+          ).animate().fade().slideY(
+                begin: -1,
+                duration: const Duration(milliseconds: 600),
+              ),
         ],
       ),
     );

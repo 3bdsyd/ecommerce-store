@@ -5,8 +5,9 @@ class OnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: WillPopScope(
-        onWillPop: () => alertExitApp(context),
+      child: PopScope(
+        canPop: false,
+        onPopInvoked: (value) => alertExitApp(context),
         child: const Scaffold(
           body: OnBoardingBasicWidget(),
         ),

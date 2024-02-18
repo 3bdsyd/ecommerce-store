@@ -1,38 +1,10 @@
 import 'package:ecommerce_store/core/constants/app_package.dart';
-import 'package:ecommerce_store/core/shared/custom_button.dart';
 
 class SignIn extends GetView<SignInControllerImp> {
   SignIn({super.key});
   final AuthControllerImp authController = Get.find();
   @override
   Widget build(BuildContext context) {
-    final GoogleSignIn _googleSignIn = GoogleSignIn();
-    final FirebaseAuth _auth = FirebaseAuth.instance;
-    Future<User?> signInWithGoogle() async {
-      try {
-        final GoogleSignInAccount? googleSignInAccount =
-            await _googleSignIn.signIn();
-        if (googleSignInAccount == null) {
-          return null;
-        }
-        if (googleSignInAccount != null) {
-          final GoogleSignInAuthentication googleSignInAuthentication =
-              await googleSignInAccount.authentication;
-          final AuthCredential credential = GoogleAuthProvider.credential(
-            accessToken: googleSignInAuthentication.accessToken,
-            idToken: googleSignInAuthentication.idToken,
-          );
-          final UserCredential authResult =
-              await _auth.signInWithCredential(credential);
-          final User? user = authResult.user;
-          return user;
-        }
-      } catch (error) {
-        print("Error signing in with Google: $error");
-        return null;
-      }
-    }
-
     return SafeArea(
       child: Scaffold(
         body: Padding(
